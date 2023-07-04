@@ -23,6 +23,11 @@ export default function RootLayout({
     title: "title",
     url: "test",
     description: "description",
+    logo: {
+      src: "https://media.springernature.com/lw703/springer-static/image/art%3A10.1038%2F528452a/MediaObjects/41586_2015_Article_BF528452a_Figg_HTML.jpg",
+      height: 100,
+      width: 200,
+    },
   };
   return (
     <html

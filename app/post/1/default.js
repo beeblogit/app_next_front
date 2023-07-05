@@ -8,8 +8,13 @@ import { parseISO, format } from "date-fns";
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
 
+import hljs from "highlight.js/lib/core";
+import go from "highlight.js/lib/languages/go";
+hljs.registerLanguage("go", go);
+
 export default function Post(props) {
   const { loading, post } = props;
+  //SyntaxHighlighterSet.registerLanguage("javascript", js);
 
   const slug = post?.slug;
 
@@ -20,7 +25,14 @@ export default function Post(props) {
   const imageProps = post?.mainImage;
 
   const AuthorimageProps = post?.author?.image;
-
+  const myCode = `
+  // my example
+  func MyFunc(v string, other *int) error {
+    test := "my value"
+    fmt.Println(test)
+  }
+  `;
+  const myHtml = hljs.highlight(myCode, { language: "go" }).value;
   return (
     <>
       <Container className="!pt-0">
@@ -89,6 +101,9 @@ export default function Post(props) {
         <article className="mx-auto max-w-screen-md ">
           <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
             text 123
+            <pre>
+              <code dangerouslySetInnerHTML={{ __html: myHtml }} />
+            </pre>
           </div>
           <div className="mb-7 mt-7 flex justify-center">
             <Link

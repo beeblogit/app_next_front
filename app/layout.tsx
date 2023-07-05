@@ -3,6 +3,7 @@ import { cx } from "@/utils/all";
 import { Inter, Lora } from "next/font/google";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import "highlight.js/styles/vs2015.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,9 +25,9 @@ export default function RootLayout({
     url: "test",
     description: "description",
     logo: {
-      src: "https://media.springernature.com/lw703/springer-static/image/art%3A10.1038%2F528452a/MediaObjects/41586_2015_Article_BF528452a_Figg_HTML.jpg",
+      src: "/img/logo.png",
       height: 100,
-      width: 200,
+      width: 300,
     },
   };
   return (

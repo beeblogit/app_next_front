@@ -2,7 +2,7 @@ import PostPage from "./default";
 
 export default async function PostDefault({ params }) {
   const post = {
-    title: "Binary Operators in Golang 2",
+    title: "Binary Operators in Golang",
     categories: [
       {
         title: "Programing",

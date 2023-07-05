@@ -36,6 +36,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cx(inter.variable, lora.variable)}
     >
+      <head>
+        <link rel="shortcut icon" href="/icon.png" />
+      </head>
       <body className="text-gray-800 antialiased dark:bg-black dark:text-gray-400">
         <>
           <Navbar {...settings} />

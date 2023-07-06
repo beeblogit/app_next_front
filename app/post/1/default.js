@@ -114,17 +114,19 @@ fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
       <Container>
         <article className="mx-auto max-w-screen-md ">
           <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
-            Welcom to my article, we are going to talk about binary operators in
-            Go 😀
-            <br />
-            <br />
-            With this functionality, we can perform operations with binary
-            numbers. For example, we can have a variable <b>
-              &apos;A&apos;
-            </b>{" "}
-            representing a binary number, another variable <b>&apos;B&apos;</b>,
-            and use logical operators to perform operations that will result in
-            a value <b>&apos;X&apos;</b>
+            <h1>Introduction</h1>
+            <p>
+              Welcom to my article, we are going to talk about binary operators
+              in Go 😀
+            </p>
+
+            <p>
+              With this functionality, we can perform operations with binary
+              numbers. For example, we can have a variable <b>&apos;A&apos;</b>{" "}
+              representing a binary number, another variable{" "}
+              <b>&apos;B&apos;</b>, and use logical operators to perform
+              operations that will result in a value <b>&apos;X&apos;</b>
+            </p>
             <table className="border-collapse border border-slate-400">
               <thead>
                 <tr>
@@ -146,6 +148,51 @@ fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
                 </tr>
               </tbody>
             </table>
+            <h1>Logical Operators</h1>
+            <p>
+              We use logical operators to compare two values. They allow us to
+              combine two values and obtain a result of either <b>1(one)</b> or
+              <b>0(zero)</b>.
+            </p>
+            <p>
+              There are 3 common operators: <b>AND, OR</b> and <b>NOT</b>. In
+              our examples, we will use variables <b>A</b> and <b>B</b> as
+              input, and variable <b>X</b> as the output.
+            </p>
+            <h3>AND</h3>
+            <p>
+              When <b>A</b> and <b>B</b> are both <b>1</b>, <b>X</b> is <b>1</b>
+              . Otherwise, <b>X</b> is <b>0</b>.
+            </p>
+            <h3>OR</h3>
+            <p>
+              When <b>A</b> or <b>B</b> is <b>1</b>, <b>X</b> is <b>1</b>.
+            </p>
+            <p>
+              The only case where <b>X</b> can be <b>0</b> is when <b>A</b> and{" "}
+              <b>B</b> are both <b>0</b>
+            </p>
+            <h3>NOT</h3>
+            <p>
+              Unlike the other logical operators, <b>NOT</b> only takes one
+              input value, and the value of <b>X</b> will always be the opposite
+              of <b>A</b>
+            </p>
+
+            <p>
+              If A is <b>1</b>, X will be <b>0</b>, and if <b>A</b> is <b>0</b>,{" "}
+              <b>X</b> will be <b>1</b>
+            </p>
+            <div className="relative z-0  overflow-hidden lg:rounded-lg">
+              <Image
+                src="/img/post/1/article/1.png"
+                alt="logical operators"
+                loading="eager"
+                height="200"
+                width="600"
+                sizes="100vw"
+              />
+            </div>
             <pre>
               <code dangerouslySetInnerHTML={{ __html: code001 }} />
             </pre>

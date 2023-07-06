@@ -27,7 +27,7 @@ export default async function IndexPage() {
           alt: "",
         },
         slug: {
-          current: "12212",
+          current: "1",
         },
       },
       slug: {

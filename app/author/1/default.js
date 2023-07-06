@@ -30,7 +30,13 @@ export default function Post(props) {
                     About {author.name}
                   </h3>
                 </div>
-                <div>author.bio</div>
+                <div>
+                  My name is <b>Nahuel Costamagna</b>, and I have been actively
+                  involved in the IT industry since 2012. My main skills are{" "}
+                  <b>FullStack Development</b>, <b>DevOps</b> and{" "}
+                  <b>Machine Learning</b>.<br />I am passionate about sharing my
+                  knowledge with others.
+                </div>
                 <div className="mt-3">
                   <Link
                     href={`/`}

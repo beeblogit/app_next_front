@@ -9,7 +9,7 @@ export default async function AuthorDefault({ params }) {
       alt: "",
     },
     slug: {
-      current: "12212",
+      current: "1",
     },
   };
   return <AuthorPage author={author} />;

@@ -3,6 +3,7 @@ import PostPage from "./default";
 export default async function PostDefault({ params }) {
   const post = {
     title: "Binary Operators in Golang",
+    estReadingTime: "10",
     categories: [
       {
         title: "Programing",
@@ -20,17 +21,18 @@ export default async function PostDefault({ params }) {
     },
     author: {
       name: "Nahuel Costamagna",
+      position: "FullStack Developer & DevOps",
       image: {
         src: "/img/authors/nahuel.png",
         blurDataURL: "",
         alt: "",
       },
       slug: {
-        current: "12212",
+        current: "1",
       },
     },
     slug: {
-      current: "12212",
+      current: "1",
     },
     publishedAt: "2023-04-30T00:00:00Z",
   };

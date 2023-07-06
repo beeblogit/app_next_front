@@ -25,14 +25,28 @@ export default function Post(props) {
   const imageProps = post?.mainImage;
 
   const AuthorimageProps = post?.author?.image;
-  const myCode = `
-  // my example
-  func MyFunc(v string, other *int) error {
-    test := "my value"
-    fmt.Println(test)
-  }
-  `;
-  const myHtml = hljs.highlight(myCode, { language: "go" }).value;
+
+  const code001 = hljs.highlight(
+    `
+var a uint16 = 213
+
+fmt.Printf("Number %d in binary is %b\\n", a, a)
+    `,
+    { language: "go" }
+  ).value;
+
+  const code002 = hljs.highlight(
+    `
+// numero_binario << cantidad_de_veces_a_mover = resultado
+
+fmt.Printf("Number %d in binary is %b\\n", a << 1, a << 1)
+// 11010101 << 1  = 110101010 (lo movemos solo 1 vez)
+  
+fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
+// 11010101 << 10 = 101010000000000 (lo movemos 10 veces)
+  `,
+    { language: "go" }
+  ).value;
   return (
     <>
       <Container className="!pt-0">
@@ -100,9 +114,41 @@ export default function Post(props) {
       <Container>
         <article className="mx-auto max-w-screen-md ">
           <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
-            text 123
+            Welcom to my article, we are going to talk about binary operators in
+            Go 😀
+            <br />
+            <br />
+            With this functionality, we can perform operations with binary
+            numbers. For example, we can have a variable <b>'A'</b> representing
+            a binary number, another variable <b>'B'</b>, and use logical
+            operators to perform operations that will result in a value{" "}
+            <b>'X’</b>
+            <table className="border-collapse border border-slate-400">
+              <thead>
+                <tr>
+                  <th className="border border-slate-300 px-3 py-2">A</th>
+                  <th className="border border-slate-300 px-3 py-2">B</th>
+                  <th className="border border-slate-300 px-3 py-2">X</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2">101</td>
+                  <td className="border border-slate-300 px-3 py-2">100</td>
+                  <td className="border border-slate-300 px-3 py-2"> ? </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2">001</td>
+                  <td className="border border-slate-300 px-3 py-2">111</td>
+                  <td className="border border-slate-300 px-3 py-2"> ? </td>
+                </tr>
+              </tbody>
+            </table>
             <pre>
-              <code dangerouslySetInnerHTML={{ __html: myHtml }} />
+              <code dangerouslySetInnerHTML={{ __html: code001 }} />
+            </pre>
+            <pre>
+              <code dangerouslySetInnerHTML={{ __html: code002 }} />
             </pre>
           </div>
           <div className="mb-7 mt-7 flex justify-center">

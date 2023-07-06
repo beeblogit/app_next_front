@@ -119,10 +119,12 @@ fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
             <br />
             <br />
             With this functionality, we can perform operations with binary
-            numbers. For example, we can have a variable <b>'A'</b> representing
-            a binary number, another variable <b>'B'</b>, and use logical
-            operators to perform operations that will result in a value{" "}
-            <b>'X’</b>
+            numbers. For example, we can have a variable <b>
+              &apos;A&apos;
+            </b>{" "}
+            representing a binary number, another variable <b>&apos;B&apos;</b>,
+            and use logical operators to perform operations that will result in
+            a value <b>&apos;X&apos;</b>
             <table className="border-collapse border border-slate-400">
               <thead>
                 <tr>

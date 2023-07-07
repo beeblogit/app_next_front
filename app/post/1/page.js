@@ -16,7 +16,7 @@ export default async function PostDefault({ params }) {
     excerpt: "12",
     mainImage: {
       blurDataURL: "",
-      src: "/img/post/1/header.webp",
+      src: "/img/post/1/header.png",
       alt: "",
     },
     author: {

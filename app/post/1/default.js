@@ -55,7 +55,7 @@ fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
             <CategoryLabel categories={post.categories} />
           </div>
 
-          <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-4xl lg:leading-snug">
+          <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-6xl lg:leading-snug">
             {post.title}
           </h1>
 
@@ -113,8 +113,8 @@ fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
 
       <Container>
         <article className="mx-auto max-w-screen-md ">
-          <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
-            <h1>Introduction</h1>
+          <div className="prose mx-auto my-3 dark:prose-invert lg:prose-xl prose-a:text-blue-600">
+            <h2>Introduction</h2>
             <p>
               Welcom to my article, we are going to talk about binary operators
               in Go 😀
@@ -130,25 +130,45 @@ fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
             <table className="border-collapse border border-slate-400">
               <thead>
                 <tr>
-                  <th className="border border-slate-300 px-3 py-2">A</th>
-                  <th className="border border-slate-300 px-3 py-2">B</th>
-                  <th className="border border-slate-300 px-3 py-2">X</th>
+                  <th className="border border-slate-300 px-3 py-2 lg:px-5">
+                    A
+                  </th>
+                  <th className="border border-slate-300 px-3 py-2 lg:px-5">
+                    B
+                  </th>
+                  <th className="border border-slate-300 px-3 py-2 lg:px-5">
+                    X
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="border border-slate-300 px-3 py-2">101</td>
-                  <td className="border border-slate-300 px-3 py-2">100</td>
-                  <td className="border border-slate-300 px-3 py-2"> ? </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    101
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    100
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    {" "}
+                    ?{" "}
+                  </td>
                 </tr>
                 <tr>
-                  <td className="border border-slate-300 px-3 py-2">001</td>
-                  <td className="border border-slate-300 px-3 py-2">111</td>
-                  <td className="border border-slate-300 px-3 py-2"> ? </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    001
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    111
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    {" "}
+                    ?{" "}
+                  </td>
                 </tr>
               </tbody>
             </table>
-            <h1>Logical Operators</h1>
+            <h2>Logical Operators</h2>
             <p>
               We use logical operators to compare two values. They allow us to
               combine two values and obtain a result of either <b>1(one)</b> or
@@ -189,7 +209,7 @@ fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
                 alt="logical operators"
                 loading="eager"
                 height="200"
-                width="600"
+                width="900"
                 sizes="100vw"
               />
             </div>

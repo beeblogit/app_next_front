@@ -171,7 +171,7 @@ fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
             <h2>Logical Operators</h2>
             <p>
               We use logical operators to compare two values. They allow us to
-              combine two values and obtain a result of either <b>1(one)</b> or
+              combine two values and obtain a result of either <b>1(one)</b> or{" "}
               <b>0(zero)</b>.
             </p>
             <p>
@@ -206,6 +206,50 @@ fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
             <div className="relative z-0  overflow-hidden lg:rounded-lg">
               <Image
                 src="/img/post/1/article/1.png"
+                alt="logical operators"
+                loading="eager"
+                height="200"
+                width="900"
+                sizes="100vw"
+              />
+            </div>
+            <p>
+              There are other Logical Operatos that we are going to explain
+              next:
+            </p>
+            <h3>XOR</h3>
+            <p>
+              XOR is equal to <b>OR</b>, however with a difference: if <b>A</b>{" "}
+              and <b>B</b> are both <b>1</b>, <b>X</b> will be <b>0</b>.{" "}
+              <b>X</b> is <b>1</b> when <b>A</b> and <b>B</b> aren&apos;t both
+              the same value.
+            </p>
+            <p>
+              For example: if <b>A</b> and <b>B</b> are both <b>1</b>, <b>X</b>{" "}
+              will be <b>0</b>. if <b>A</b> and <b>B</b> are both <b>0</b>,{" "}
+              <b>X</b> will be <b>0</b> too. Otherwise, <b>X</b> will be{" "}
+              <b>1</b>
+            </p>
+            <h3>NAND</h3>
+            <p>
+              NAND is the opposite of <b>AND</b> (AND + NOT). <b>X</b> will be{" "}
+              <b>0</b> when <b>A</b> and <b>B</b> are both <b>1</b>. Otherwise,{" "}
+              <b>X</b> will be <b>1</b>
+            </p>
+            <h3>NOR</h3>
+            <p>
+              <b>NOR</b> is the opposite of OR (OR + NOT), if <b>A</b> and{" "}
+              <b>B</b> are both <b>0</b>, <b>X</b> will be <b>1</b>. Otherwise,{" "}
+              <b>X</b> will be <b>0</b>
+            </p>
+            <h3>XNOR</h3>
+            <p>
+              <b>XNOR</b> is the opposite of XOR (XOR + NOT), <b>X</b> will be{" "}
+              <b>1</b> when <b>A</b> and <b>B</b> are both the same value
+            </p>
+            <div className="relative z-0  overflow-hidden lg:rounded-lg">
+              <Image
+                src="/img/post/1/article/2.png"
                 alt="logical operators"
                 loading="eager"
                 height="200"

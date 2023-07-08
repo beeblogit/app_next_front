@@ -257,6 +257,23 @@ fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
                 sizes="100vw"
               />
             </div>
+            <h2>Binary Operators in Go</h2>
+
+            <p>
+              For the next examples, we are going to use a 16-bit positive
+              integer value (uint). We&apos;ll set it to a decimal value and
+              display the value in both decimal and binary formats in the
+              console.
+            </p>
+
+            <p>
+              (We&apos;ll use{" "}
+              <b>
+                <i>%b</i>
+              </b>{" "}
+              to see its binary representation.)
+            </p>
+
             <pre>
               <code dangerouslySetInnerHTML={{ __html: code001 }} />
             </pre>

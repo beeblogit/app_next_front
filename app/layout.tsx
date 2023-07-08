@@ -4,7 +4,7 @@ import { Inter, Lora } from "next/font/google";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import "highlight.js/styles/vs2015.css";
-
+import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -47,6 +47,7 @@ export default function RootLayout({
 
           <Footer {...settings} />
         </>
+        <Analytics />
       </body>
     </html>
   );

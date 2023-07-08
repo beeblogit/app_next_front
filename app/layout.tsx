@@ -37,7 +37,7 @@ export default function RootLayout({
       className={cx(inter.variable, lora.variable)}
     >
       <head>
-        <link rel="shortcut icon" href="/icon.png" />
+        <link rel="shortcut icon" href="/favicon.png" />
       </head>
       <body className="text-gray-800 antialiased dark:bg-black dark:text-gray-400">
         <>

@@ -37,13 +37,29 @@ fmt.Printf("Number %d in binary is %b\\n", a, a)
 
   const code002 = hljs.highlight(
     `
-// numero_binario << cantidad_de_veces_a_mover = resultado
+// binary_number << n_positions_to_shift = result
 
 fmt.Printf("Number %d in binary is %b\\n", a << 1, a << 1)
-// 11010101 << 1  = 110101010 (lo movemos solo 1 vez)
-  
+// 11010101 << 1  = 110101010 (We shift it once)
+
 fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
-// 11010101 << 10 = 101010000000000 (lo movemos 10 veces)
+// 11010101 << 10 = 101010000000000 (We shift it 10 times)
+  `,
+    { language: "go" }
+  ).value;
+
+  const code003 = hljs.highlight(
+    `
+// binary_number >> n_positions_to_shift = result
+
+fmt.Printf("Number %d in binary is %b\\n", a >> 1, a >> 1)
+// 11010101 >> 1  = 1101010 (We shift it once, the number will be decreasing)
+
+fmt.Printf("Number %d in binary is %b\\n", a >> 10, a >> 10)
+// 11010101 >> 10  = 0 (We shift 10 times)
+
+fmt.Printf("Number %d in binary is %b\\n", a >> 5, a >> 5)
+// 11010101 >> 10  = 110 (We shift 5 times)
   `,
     { language: "go" }
   ).value;
@@ -277,9 +293,30 @@ fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
             <pre>
               <code dangerouslySetInnerHTML={{ __html: code001 }} />
             </pre>
+            <h3>Left shift & Right shift</h3>
+            <p>
+              We use those operators to shift the binary values by <b>n</b>{" "}
+              positions.
+            </p>
+
+            <p>
+              <b>Left shift</b> is represented by <b>&lt;&lt;</b>, for example:
+            </p>
             <pre>
               <code dangerouslySetInnerHTML={{ __html: code002 }} />
             </pre>
+            <p>
+              <b>Right shift</b> is represented by <b>&lt;&lt;</b>, for example:
+            </p>
+            <pre>
+              <code dangerouslySetInnerHTML={{ __html: code003 }} />
+            </pre>
+            <p>
+              There will come a point where we won&apos;t be able to decrement
+              it anymore, and it will always be zero. For example, when we tried
+              to shift it 10 times.
+            </p>
+            <h3>Logical Operators</h3>
             <h1>Under construction</h1>
           </div>
           <div className="mb-7 mt-7 flex justify-center">

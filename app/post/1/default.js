@@ -280,6 +280,7 @@ fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
             <pre>
               <code dangerouslySetInnerHTML={{ __html: code002 }} />
             </pre>
+            <h1>Under construction</h1>
           </div>
           <div className="mb-7 mt-7 flex justify-center">
             <Link

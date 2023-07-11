@@ -38,7 +38,7 @@ export default function Post(props) {
                   <b>Machine Learning</b>.<br />I am passionate about sharing my
                   knowledge with others.
                 </div>
-                <div className="mt-3 grid grid-cols-12 gap-12 md:grid-cols-12 md:gap-12">
+                <div className="mt-3 grid grid-cols-6 gap-6 md:grid-cols-12 md:gap-12">
                   <Link href="https://github.com/ncostamagna">
                     <button
                       type="button"

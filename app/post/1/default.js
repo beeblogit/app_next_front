@@ -63,6 +63,36 @@ fmt.Printf("Number %d in binary is %b\\n", a >> 5, a >> 5)
   `,
     { language: "go" }
   ).value;
+
+  const code004 = hljs.highlight(
+    `
+var b uint16 = 20
+
+fmt.Printf("'a': %.3d - %.10b\\n", a, a) // a = 0011010101
+fmt.Printf("'b': %.3d - %.10b\\n\\n", b, b) // b = 0000010100
+  `,
+    { language: "go" }
+  ).value;
+
+  const code005 = hljs.highlight(
+    `
+// AND
+fmt.Printf("Bitwise AND: %d - %.10b\\n", a & b, a & b)
+// 0011010101 AND 0000010100 = 0000010100
+
+// OR
+fmt.Printf("Bitwise OR: %d - %.10b\\n", a | b, a | b)
+// 0011010101 OR 0000010100 = 0011010101
+
+// XOR
+fmt.Printf("Bitwise XOR: %d - %.10b\\n", a ^ b, a ^ b)
+// 0011010101 OR 0000010100 = 0011000001
+
+fmt.Printf("Bitwise NOT: %d - %.10b\\n", ^a, ^a)
+// NOT 0011010101 = 1111111100101010
+`,
+    { language: "go" }
+  ).value;
   return (
     <>
       <Container className="!pt-0">
@@ -317,6 +347,38 @@ fmt.Printf("Number %d in binary is %b\\n", a >> 5, a >> 5)
               to shift it 10 times.
             </p>
             <h3>Logical Operators</h3>
+            <p>
+              We are going to declare another variable to perform the following
+              examples.
+            </p>
+
+            <p>(We will use a 10-digit format to fill it with leading zeros)</p>
+            <pre>
+              <code dangerouslySetInnerHTML={{ __html: code004 }} />
+            </pre>
+            <p>Representation of the binary logical operators in Go:</p>
+            <ul>
+              <li>
+                If we want to perform an AND operation between A and B, we use:
+                a & b
+              </li>
+              <li>
+                If we want to perform an OR operation between A and B, we use: a
+                | b
+              </li>
+              <li>
+                If we want to perform an XOR operation between A and B, we use:
+                a ^ b
+              </li>
+              <li>If we want to perform a NOT operation on A, we use: ^a</li>
+            </ul>
+            <p>
+              (The caret symbol (^) is indeed used for both XOR and NOT
+              operations.)
+            </p>
+            <pre>
+              <code dangerouslySetInnerHTML={{ __html: code005 }} />
+            </pre>
             <h1>Under construction</h1>
           </div>
           <div className="mb-7 mt-7 flex justify-center">

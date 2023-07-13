@@ -335,13 +335,13 @@ fmt.Printf("Bitwise XNOR: %d - %.10b\n", ^(a ^ b), ^(a ^ b))
 
             <p>
               For the next examples, we are going to use a 16-bit positive
-              integer value (uint). We&apos;ll set it to a decimal value and
+              integer value (uint). We will set it to a decimal value and
               display the value in both decimal and binary formats in the
               console.
             </p>
 
             <p>
-              (We&apos;ll use{" "}
+              (We will use{" "}
               <b>
                 <i>%b</i>
               </b>{" "}
@@ -410,7 +410,7 @@ fmt.Printf("Bitwise XNOR: %d - %.10b\n", ^(a ^ b), ^(a ^ b))
             <p>
               In the case of <b>NOT</b>, a larger binary number is seen compared
               to the previous ones. This is because for the previous cases, we
-              had leading zeros that didn't represent anything, but when
+              had leading zeros that didn&apos;t represent anything, but when
               performing a NOT operation, those zeros are converted to ones that
               now represent values.
             </p>

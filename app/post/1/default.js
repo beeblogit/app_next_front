@@ -121,7 +121,10 @@ fmt.Printf("Bitwise XNOR: %d - %.10b\n", ^(a ^ b), ^(a ^ b))
         <meta property="og:title" content="Binary Operators in Golang" />
         <meta name="twitter:card" content="Binary Operators in Golang" />
         <meta property="og:description" content="Binary Operators in Golang" />
-        <meta property="og:image" content={imageProps.src} />
+        <meta
+          property="og:image"
+          content={"https://www.beeblogit.com" + imageProps.src}
+        />
       </head>
       <Container className="!pt-0">
         <div className="mx-auto max-w-screen-md ">

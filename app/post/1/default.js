@@ -7,6 +7,7 @@ import { parseISO, format } from "date-fns";
 
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
+import Head from "next/head";
 
 import hljs from "highlight.js/lib/core";
 import go from "highlight.js/lib/languages/go";
@@ -93,8 +94,35 @@ fmt.Printf("Bitwise NOT: %d - %.10b\\n", ^a, ^a)
 `,
     { language: "go" }
   ).value;
+
+  const code006 = hljs.highlight(
+    `
+// NAND
+fmt.Printf("Bitwise NAND: %d - %.10b\n", ^(a & b), ^(a & b))
+// NOT (0011010101 AND 0000010100) = 1111111111101011
+// 0011010101 NAND 0000010100      = 1111111111101011
+
+// NOR
+fmt.Printf("Bitwise NOR: %d - %.10b\n", ^(a | b), ^(a | b))
+// NOT (0011010101 OR 0000010100) = 1111111100101010
+// 0011010101 NOR 0000010100      = 1111111100101010
+
+// XNOR
+fmt.Printf("Bitwise XNOR: %d - %.10b\n", ^(a ^ b), ^(a ^ b))
+// NOT (0011010101 XOR 0000010100) = 1111111100111110
+// 0011010101 XNOR 0000010100      = 1111111100111110
+`,
+    { language: "go" }
+  ).value;
   return (
     <>
+      <head>
+        <title>Binary Operators in Golang</title>
+        <meta property="og:title" content="Binary Operators in Golang" />
+        <meta name="twitter:card" content="Binary Operators in Golang" />
+        <meta property="og:description" content="Binary Operators in Golang" />
+        <meta property="og:image" content={imageProps} />
+      </head>
       <Container className="!pt-0">
         <div className="mx-auto max-w-screen-md ">
           <div className="flex justify-center">
@@ -162,7 +190,7 @@ fmt.Printf("Bitwise NOT: %d - %.10b\\n", ^a, ^a)
           <div className="prose mx-auto my-3 dark:prose-invert lg:prose-xl prose-a:text-blue-600">
             <h2>Introduction</h2>
             <p>
-              Welcom to my article, we are going to talk about binary operators
+              Welcome to my article, we are going to talk about binary operators
               in Go 😀
             </p>
 
@@ -378,6 +406,29 @@ fmt.Printf("Bitwise NOT: %d - %.10b\\n", ^a, ^a)
             </p>
             <pre>
               <code dangerouslySetInnerHTML={{ __html: code005 }} />
+            </pre>
+            <p>
+              In the case of <b>NOT</b>, a larger binary number is seen compared
+              to the previous ones. This is because for the previous cases, we
+              had leading zeros that didn't represent anything, but when
+              performing a NOT operation, those zeros are converted to ones that
+              now represent values.
+            </p>
+            <p>
+              It will fill with ones up to the capacity of the variable, in this
+              case, 16 bits.
+            </p>
+            <p></p>
+            <p>
+              To use the <b>NAND, NOR</b>, and <b>XNOR</b> operators, we do the
+              same as in the previous example but add a <b>NOT</b> to each one.
+            </p>
+            <p>
+              For example, if we want to perform a <b>NAND</b> operation, we
+              take the <b>NOT</b> of an <b>AND</b> operation.
+            </p>
+            <pre>
+              <code dangerouslySetInnerHTML={{ __html: code006 }} />
             </pre>
             <h1>Under construction</h1>
           </div>

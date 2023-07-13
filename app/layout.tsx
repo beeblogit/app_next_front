@@ -5,6 +5,7 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import "highlight.js/styles/vs2015.css";
 import { Analytics } from "@vercel/analytics/react";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -38,6 +39,7 @@ export default function RootLayout({
     >
       <head>
         <link rel="shortcut icon" href="/favicon.png" />
+        <title>Bee Blogit</title>
       </head>
       <body className="text-gray-800 antialiased dark:bg-black dark:text-gray-400">
         <>

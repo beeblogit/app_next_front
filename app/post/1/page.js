@@ -3,7 +3,7 @@ import PostPage from "./default";
 export default async function PostDefault({ params }) {
   const post = {
     title: "Binary Operators in Golang",
-    estReadingTime: "10",
+    estReadingTime: "15",
     categories: [
       {
         title: "Programing",
@@ -34,7 +34,7 @@ export default async function PostDefault({ params }) {
     slug: {
       current: "1",
     },
-    publishedAt: "2023-04-30T00:00:00Z",
+    publishedAt: "2023-07-14T00:00:00Z",
   };
   return <PostPage post={post} />;
 }

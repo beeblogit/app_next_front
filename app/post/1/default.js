@@ -8,14 +8,13 @@ import { parseISO, format } from "date-fns";
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
 import Head from "next/head";
-
+import Code from "@/components/blog/code";
 import hljs from "highlight.js/lib/core";
 import go from "highlight.js/lib/languages/go";
 hljs.registerLanguage("go", go);
 
 export default function Post(props) {
   const { loading, post } = props;
-  //SyntaxHighlighterSet.registerLanguage("javascript", js);
 
   const slug = post?.slug;
 
@@ -27,119 +26,32 @@ export default function Post(props) {
 
   const AuthorimageProps = post?.author?.image;
 
-  const code001 = hljs.highlight(
-    `
-var a uint16 = 213
-
-fmt.Printf("Number %d in binary is %b\\n", a, a)
-    `,
-    { language: "go" }
-  ).value;
-
-  const code002 = hljs.highlight(
-    `
-// binary_number << n_positions_to_shift = result
-
-fmt.Printf("Number %d in binary is %b\\n", a << 1, a << 1)
-// 11010101 << 1  = 110101010 (We shift it once)
-
-fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
-// 11010101 << 10 = 101010000000000 (We shift it 10 times)
-  `,
-    { language: "go" }
-  ).value;
-
-  const code003 = hljs.highlight(
-    `
-// binary_number >> n_positions_to_shift = result
-
-fmt.Printf("Number %d in binary is %b\\n", a >> 1, a >> 1)
-// 11010101 >> 1  = 1101010 (We shift it once, the number will be decreasing)
-
-fmt.Printf("Number %d in binary is %b\\n", a >> 10, a >> 10)
-// 11010101 >> 10  = 0 (We shift 10 times)
-
-fmt.Printf("Number %d in binary is %b\\n", a >> 5, a >> 5)
-// 11010101 >> 10  = 110 (We shift 5 times)
-  `,
-    { language: "go" }
-  ).value;
-
-  const code004 = hljs.highlight(
-    `
-var b uint16 = 20
-
-fmt.Printf("'a': %.3d - %.10b\\n", a, a) // a = 0011010101
-fmt.Printf("'b': %.3d - %.10b\\n\\n", b, b) // b = 0000010100
-  `,
-    { language: "go" }
-  ).value;
-
-  const code005 = hljs.highlight(
-    `
-// AND
-fmt.Printf("Bitwise AND: %d - %.10b\\n", a & b, a & b)
-// 0011010101 AND 0000010100 = 0000010100
-
-// OR
-fmt.Printf("Bitwise OR: %d - %.10b\\n", a | b, a | b)
-// 0011010101 OR 0000010100 = 0011010101
-
-// XOR
-fmt.Printf("Bitwise XOR: %d - %.10b\\n", a ^ b, a ^ b)
-// 0011010101 OR 0000010100 = 0011000001
-
-fmt.Printf("Bitwise NOT: %d - %.10b\\n", ^a, ^a)
-// NOT 0011010101 = 1111111100101010
-`,
-    { language: "go" }
-  ).value;
-
-  const code006 = hljs.highlight(
-    `
-// NAND
-fmt.Printf("Bitwise NAND: %d - %.10b\n", ^(a & b), ^(a & b))
-// NOT (0011010101 AND 0000010100) = 1111111111101011
-// 0011010101 NAND 0000010100      = 1111111111101011
-
-// NOR
-fmt.Printf("Bitwise NOR: %d - %.10b\n", ^(a | b), ^(a | b))
-// NOT (0011010101 OR 0000010100) = 1111111100101010
-// 0011010101 NOR 0000010100      = 1111111100101010
-
-// XNOR
-fmt.Printf("Bitwise XNOR: %d - %.10b\n", ^(a ^ b), ^(a ^ b))
-// NOT (0011010101 XOR 0000010100) = 1111111100111110
-// 0011010101 XNOR 0000010100      = 1111111100111110
-`,
-    { language: "go" }
-  ).value;
   return (
     <>
       <head>
         <title>Binary Operators in Golang</title>
         <meta
-          prefix="og:https://www.beeblogit.com"
+          prefix="og:https://www.beeblogit.com#"
           property="og:title"
           content="Binary Operators in Golang"
         />
         <meta
-          prefix="og:https://www.beeblogit.com"
+          prefix="og:https://www.beeblogit.com#"
           name="twitter:card"
           content="Binary Operators in Golang"
         />
         <meta
-          prefix="og:https://www.beeblogit.com"
+          prefix="og:https://www.beeblogit.com#"
           property="og:description"
           content="Binary Operators in Golang"
         />
         <meta
-          prefix="og:https://www.beeblogit.com"
+          prefix="og:https://www.beeblogit.com#"
           property="og:image"
           content="https://www.beeblogit.com/img/post/1/header_min.jpg"
         />
         <meta
-          prefix="og:https://www.beeblogit.com"
+          prefix="og:https://www.beeblogit.com#"
           property="og:url"
           content="https://www.beeblogit.com"
         />
@@ -369,9 +281,11 @@ fmt.Printf("Bitwise XNOR: %d - %.10b\n", ^(a ^ b), ^(a ^ b))
               to see its binary representation.)
             </p>
 
-            <pre>
-              <code dangerouslySetInnerHTML={{ __html: code001 }} />
-            </pre>
+            <Code lang="go">
+              {`var a uint16 = 213
+              
+fmt.Printf("Number %d in binary is %b\\n", a, a)`}
+            </Code>
             <h3>Left shift & Right shift</h3>
             <p>
               We use those operators to shift the binary values by <b>n</b>{" "}
@@ -381,15 +295,30 @@ fmt.Printf("Bitwise XNOR: %d - %.10b\n", ^(a ^ b), ^(a ^ b))
             <p>
               <b>Left shift</b> is represented by <b>&lt;&lt;</b>, for example:
             </p>
-            <pre>
-              <code dangerouslySetInnerHTML={{ __html: code002 }} />
-            </pre>
+            <Code lang="go">
+              {`// binary_number << n_positions_to_shift = result
+
+fmt.Printf("Number %d in binary is %b\\n", a << 1, a << 1)
+// 11010101 << 1  = 110101010 (We shift it once)
+
+fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
+// 11010101 << 10 = 101010000000000 (We shift it 10 times)`}
+            </Code>
             <p>
               <b>Right shift</b> is represented by <b>&lt;&lt;</b>, for example:
             </p>
-            <pre>
-              <code dangerouslySetInnerHTML={{ __html: code003 }} />
-            </pre>
+            <Code lang="go">
+              {`// binary_number >> n_positions_to_shift = result
+
+fmt.Printf("Number %d in binary is %b\\n", a >> 1, a >> 1)
+// 11010101 >> 1  = 1101010 (We shift it once, the number will be decreasing)
+
+fmt.Printf("Number %d in binary is %b\\n", a >> 10, a >> 10)
+// 11010101 >> 10  = 0 (We shift 10 times)
+
+fmt.Printf("Number %d in binary is %b\\n", a >> 5, a >> 5)
+// 11010101 >> 10  = 110 (We shift 5 times)`}
+            </Code>
             <p>
               There will come a point where we won&apos;t be able to decrement
               it anymore, and it will always be zero. For example, when we tried
@@ -402,9 +331,12 @@ fmt.Printf("Bitwise XNOR: %d - %.10b\n", ^(a ^ b), ^(a ^ b))
             </p>
 
             <p>(We will use a 10-digit format to fill it with leading zeros)</p>
-            <pre>
-              <code dangerouslySetInnerHTML={{ __html: code004 }} />
-            </pre>
+            <Code lang="go">
+              {`var b uint16 = 20
+
+fmt.Printf("'a': %.3d - %.10b\\n", a, a) // a = 0011010101
+fmt.Printf("'b': %.3d - %.10b\\n\\n", b, b) // b = 0000010100`}
+            </Code>
             <p>Representation of the binary logical operators in Go:</p>
             <ul>
               <li>
@@ -425,9 +357,22 @@ fmt.Printf("Bitwise XNOR: %d - %.10b\n", ^(a ^ b), ^(a ^ b))
               (The caret symbol (^) is indeed used for both XOR and NOT
               operations.)
             </p>
-            <pre>
-              <code dangerouslySetInnerHTML={{ __html: code005 }} />
-            </pre>
+            <Code lang="go">
+              {`// AND
+fmt.Printf("Bitwise AND: %d - %.10b\\n", a & b, a & b)
+// 0011010101 AND 0000010100 = 0000010100
+
+// OR
+fmt.Printf("Bitwise OR: %d - %.10b\\n", a | b, a | b)
+// 0011010101 OR 0000010100 = 0011010101
+
+// XOR
+fmt.Printf("Bitwise XOR: %d - %.10b\\n", a ^ b, a ^ b)
+// 0011010101 OR 0000010100 = 0011000001
+
+fmt.Printf("Bitwise NOT: %d - %.10b\\n", ^a, ^a)
+// NOT 0011010101 = 1111111100101010`}
+            </Code>
             <p>
               In the case of <b>NOT</b>, a larger binary number is seen compared
               to the previous ones. This is because for the previous cases, we
@@ -448,10 +393,226 @@ fmt.Printf("Bitwise XNOR: %d - %.10b\n", ^(a ^ b), ^(a ^ b))
               For example, if we want to perform a <b>NAND</b> operation, we
               take the <b>NOT</b> of an <b>AND</b> operation.
             </p>
-            <pre>
-              <code dangerouslySetInnerHTML={{ __html: code006 }} />
-            </pre>
-            <h1>Under construction</h1>
+            <Code lang="go">
+              {`// NAND
+fmt.Printf("Bitwise NAND: %d - %.10b\\n", ^(a & b), ^(a & b))
+// NOT (0011010101 AND 0000010100) = 1111111111101011
+// 0011010101 NAND 0000010100      = 1111111111101011
+
+// NOR
+fmt.Printf("Bitwise NOR: %d - %.10b\\n", ^(a | b), ^(a | b))
+// NOT (0011010101 OR 0000010100) = 1111111100101010
+// 0011010101 NOR 0000010100      = 1111111100101010
+
+// XNOR
+fmt.Printf("Bitwise XNOR: %d - %.10b\\n", ^(a ^ b), ^(a ^ b))
+// NOT (0011010101 XOR 0000010100) = 1111111100111110
+// 0011010101 XNOR 0000010100      = 1111111100111110`}
+            </Code>
+            <h2>Example</h2>
+            <p>
+              We are going to perform a small example using roles. We will have
+              the roles <b>READ, WRITE, UPDATE</b>, and <b>DELETE</b>, each of
+              which will be represented by binary numbers with only a <b>1</b>{" "}
+              in different positions:
+            </p>
+            <table className="border-collapse border border-slate-400">
+              <thead>
+                <tr>
+                  <th className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Role
+                  </th>
+                  <th className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Value
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    READ
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    0001
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    WRITE
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    0010
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    UPDATE
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    0100
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    DELETE
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    1000
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              We are going to do it this way so that we can add them up and
+              based on a number (the sum of the roles we want to assign to a
+              profile), we can identify which roles the profile has assigned.
+            </p>
+            <p></p>
+            <p>
+              So let&apos;s define those 4 variables that will represent the
+              roles:
+            </p>
+            <Code lang="go">
+              {`READ_ROLE := 1         // 0001
+WRITE_ROLE := 1 << 1   // 0010
+UPDATE_ROLE := 1 << 2  // 0100
+DELETE_ROLE := 1 << 3  // 1000`}
+            </Code>
+            <p>
+              Then we are going to assign roles to a profile. We will add the
+              roles for writing, reading, and deleting:
+            </p>
+            <Code lang="go">
+              {`myProfile := READ_ROLE + WRITE_ROLE + DELETE_ROLE 
+// Profile: 1011`}
+            </Code>
+            <p>
+              And now, to validate if the profile has permissions to perform an
+              operation, we will use the bitwise <b>AND</b> operator:
+            </p>
+            <ul>
+              <li>
+                If the result of the <b>AND</b> operation is equal to the{" "}
+                <b>ROLE</b>, then <b>it has permissions</b>.
+              </li>
+              <li>
+                If the result of the <b>AND</b> operation is zero, then{" "}
+                <b>it does NOT have permissions</b>.
+              </li>
+            </ul>
+            <table className="border-collapse border border-slate-400">
+              <thead>
+                <tr>
+                  <th className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Role
+                  </th>
+                  <th className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Role Value
+                  </th>
+                  <th className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Profile
+                  </th>
+                  <th className="border border-slate-300 px-3 py-2 lg:px-5">
+                    AND Result
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    READ
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    0001
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    1011
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    0001
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    WRITE
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    0010
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    1011
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    0010
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    UPDATE
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    0100
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    1011
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    0
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    DELETE
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    1000
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    1011
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    1000
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <Code lang="go">
+              {`// Validating for the update role, it does not have permissions.
+fmt.Println("Does the user have permissions to perform the operation?")
+if (0 != (myProfile & UPDATE_ROLE)) {
+	fmt.Println("Yes! :D")
+}else{
+	fmt.Println("No :(")
+}`}
+            </Code>
+            <Code lang="go">
+              {`// Validating for the read role, it has permissions.
+fmt.Println("Does the user have permissions to perform the operation?")
+if (0 != (myProfile & READ_ROLE)) {
+	fmt.Println("Yes! :D")
+}else{
+	fmt.Println("No :(")
+}`}
+            </Code>
+            <h2>Conclusion</h2>
+            <p>
+              In this article, we have explored the fundamentals of binary
+              operators in Golang and learned how to effectively use them in our
+              applications. We have seen how these operators allow us to perform
+              logical and arithmetic operations at the bit level, which is
+              useful in specific scenarios. Remember that understanding and
+              correctly applying binary operators can improve the performance
+              and efficiency of your programs. Feel free to experiment with them
+              and further explore the power of binary operators in your Go
+              projects!
+            </p>
+            <p></p>
+            <p>
+              resource:{" "}
+              <a href="https://github.com/beeblogit/blog_go_binary_operators">
+                blog_go_binary_operators
+              </a>
+            </p>
           </div>
           <div className="mb-7 mt-7 flex justify-center">
             <Link

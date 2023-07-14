@@ -136,7 +136,7 @@ fmt.Printf("Bitwise XNOR: %d - %.10b\n", ^(a ^ b), ^(a ^ b))
         <meta
           prefix="og: https://www.beeblogit.com#"
           property="og:image"
-          content="https://www.beeblogit.com/img/post/1"
+          content="https://www.beeblogit.com/img/post/1/header_900.png"
         />
         <meta
           prefix="og: https://www.beeblogit.com#"

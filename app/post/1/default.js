@@ -154,6 +154,19 @@ fmt.Printf("Bitwise XNOR: %d - %.10b\n", ^(a ^ b), ^(a ^ b))
             {post.title}
           </h1>
 
+          <div className="relative z-0 mx-auto hidden aspect-video max-w-screen-lg overflow-hidden lg:rounded-lg">
+            {imageProps && (
+              <Image
+                src={imageProps.src}
+                alt={post.mainImage?.alt || "Thumbnail"}
+                loading="eager"
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+            )}
+          </div>
+
           <div className="mt-3 flex justify-center space-x-3 text-gray-500 ">
             <div className="flex items-center gap-3">
               <div className="relative h-10 w-10 flex-shrink-0">

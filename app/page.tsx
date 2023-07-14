@@ -33,7 +33,7 @@ export default async function IndexPage() {
       slug: {
         current: "1",
       },
-      publishedAt: "2023-04-30T00:00:00Z",
+      publishedAt: "2023-07-14T00:00:00Z",
     },
   ];
 

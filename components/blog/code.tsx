@@ -1,12 +1,14 @@
-import Image from "next/image";
-import Link from "next/link";
 import hljs from "highlight.js/lib/core";
 import go from "highlight.js/lib/languages/go";
 hljs.registerLanguage("go", go);
 
-export default function Code(params) {
-  const { lang, children } = params;
-
+export default function Code({
+  children,
+  lang,
+}: {
+  children: string;
+  lang: string;
+}) {
   const code = hljs.highlight(children, { language: lang }).value;
 
   return (

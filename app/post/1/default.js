@@ -118,10 +118,23 @@ fmt.Printf("Bitwise XNOR: %d - %.10b\n", ^(a ^ b), ^(a ^ b))
     <>
       <head>
         <title>Binary Operators in Golang</title>
-        <meta property="og:title" content="Binary Operators in Golang" />
-        <meta name="twitter:card" content="Binary Operators in Golang" />
-        <meta property="og:description" content="Binary Operators in Golang" />
         <meta
+          prefix="og: https://www.beeblogit.com"
+          property="og:title"
+          content="Binary Operators in Golang"
+        />
+        <meta
+          prefix="og: https://www.beeblogit.com"
+          name="twitter:card"
+          content="Binary Operators in Golang"
+        />
+        <meta
+          prefix="og: https://www.beeblogit.com"
+          property="og:description"
+          content="Binary Operators in Golang"
+        />
+        <meta
+          prefix="og: https://www.beeblogit.com"
           property="og:image"
           content={"https://www.beeblogit.com" + imageProps.src}
         />

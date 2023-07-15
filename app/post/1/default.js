@@ -286,6 +286,8 @@ export default function Post(props) {
               
 fmt.Printf("Number %d in binary is %b\\n", a, a)`}
             </Code>
+            <h5>Output:</h5>
+            <Code lang="markdown">Number 213 in binary is 11010101</Code>
             <h3>Left shift & Right shift</h3>
             <p>
               We use those operators to shift the binary values by <b>n</b>{" "}
@@ -304,6 +306,15 @@ fmt.Printf("Number %d in binary is %b\\n", a << 1, a << 1)
 fmt.Printf("Number %d in binary is %b\\n", a << 10, a << 10)
 // 11010101 << 10 = 101010000000000 (We shift it 10 times)`}
             </Code>
+            <h5>Output:</h5>
+            <Code lang="markdown">{`Number 426 in binary is 110101010
+Number 21504 in binary is 101010000000000`}</Code>
+            <p>
+              The result is <b>101010000000000</b> instead of{" "}
+              <b>110101010000000000</b>. When we attempt to perform a left shift
+              with 10 positions, the value is truncated. This happens because
+              the value being shifted is bigger than 16 bits.
+            </p>
             <p>
               <b>Right shift</b> is represented by <b>&lt;&lt;</b>, for example:
             </p>
@@ -319,6 +330,10 @@ fmt.Printf("Number %d in binary is %b\\n", a >> 10, a >> 10)
 fmt.Printf("Number %d in binary is %b\\n", a >> 5, a >> 5)
 // 11010101 >> 10  = 110 (We shift 5 times)`}
             </Code>
+            <h5>Output:</h5>
+            <Code lang="markdown">{`Number 106 in binary is 1101010
+Number 0 in binary is 0
+Number 6 in binary is 110`}</Code>
             <p>
               There will come a point where we won&apos;t be able to decrement
               it anymore, and it will always be zero. For example, when we tried
@@ -337,6 +352,9 @@ fmt.Printf("Number %d in binary is %b\\n", a >> 5, a >> 5)
 fmt.Printf("'a': %.3d - %.10b\\n", a, a) // a = 0011010101
 fmt.Printf("'b': %.3d - %.10b\\n\\n", b, b) // b = 0000010100`}
             </Code>
+            <h5>Output:</h5>
+            <Code lang="markdown">{`'a': 213 - 0011010101
+'b': 020 - 0000010100`}</Code>
             <p>Representation of the binary logical operators in Go:</p>
             <ul>
               <li>
@@ -373,6 +391,11 @@ fmt.Printf("Bitwise XOR: %d - %.10b\\n", a ^ b, a ^ b)
 fmt.Printf("Bitwise NOT: %d - %.10b\\n", ^a, ^a)
 // NOT 0011010101 = 1111111100101010`}
             </Code>
+            <h5>Output:</h5>
+            <Code lang="markdown">{`Bitwise AND: 20 - 0000010100
+Bitwise OR: 213 - 0011010101
+Bitwise XOR: 193 - 0011000001
+Bitwise NOT: 65322 - 1111111100101010`}</Code>
             <p>
               In the case of <b>NOT</b>, a larger binary number is seen compared
               to the previous ones. This is because for the previous cases, we
@@ -409,6 +432,10 @@ fmt.Printf("Bitwise XNOR: %d - %.10b\\n", ^(a ^ b), ^(a ^ b))
 // NOT (0011010101 XOR 0000010100) = 1111111100111110
 // 0011010101 XNOR 0000010100      = 1111111100111110`}
             </Code>
+            <h5>Output:</h5>
+            <Code lang="markdown">{`Bitwise NAND: 65515 - 1111111111101011
+Bitwise NOR: 65322 - 1111111100101010
+Bitwise XNOR: 65342 - 1111111100111110`}</Code>
             <h2>Example</h2>
             <p>
               We are going to perform a small example using roles. We will have

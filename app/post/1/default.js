@@ -290,7 +290,7 @@ Number 21504 in binary is 101010000000000`}</Code>
               the value being shifted is bigger than 16 bits.
             </p>
             <p>
-              <b>Right shift</b> is represented by <b>&lt;&lt;</b>, for example:
+              <b>Right shift</b> is represented by <b>&gt;&gt;</b>, for example:
             </p>
             <Code lang="go">
               {`// binary_number >> n_positions_to_shift = result

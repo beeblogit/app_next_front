@@ -437,8 +437,9 @@ Reverse: [6 4 2 1 3 4 2 3]`}</Code>
             <h2 id="replace">Replace</h2>
             <p>
               We can use this method to replace a range of elements. To perform
-              this operation, we need to define the value of 'i' (start), the
-              value of 'j' (end), and the values that will be added.
+              this operation, we need to define the value of &apos;i&apos;
+              (start), the value of &apos;j&apos; (end), and the values that
+              will be added.
             </p>
 
             <Code lang="go">{`slices.Replace(mySlice, from, to, value1, value2, value3, ...)`}</Code>

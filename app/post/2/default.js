@@ -151,6 +151,12 @@ export default function Post(props) {
                 </li>
 
                 <li>
+                  <Link href="#equals" className="blog-link">
+                    Equals
+                  </Link>
+                  : determines whether two slices are equal.
+                </li>
+                <li>
                   <Link href="#index" className="blog-link">
                     Index
                   </Link>
@@ -202,6 +208,13 @@ export default function Post(props) {
                 </li>
               </ul>
             </p>
+            <p>
+              Some methods have a{" "}
+              <Link href="#function" className="blog-link">
+                &apos;Function&apos; functionality
+              </Link>{" "}
+              , with this we can use custom comparison
+            </p>
             <hr className="my-12 h-0.5 border-t-0 bg-neutral-200 opacity-100" />
             <h2 id="binary-search">Binary Search</h2>
             <p>
@@ -210,7 +223,7 @@ export default function Post(props) {
             </p>
             <p>Our slices must be ordered to do this operation.</p>
             <Code lang="go">
-              {`position, isFound = slices.BinarySearch(mySlice, value)`}
+              {`position, isFound := slices.BinarySearch(mySlice, value)`}
             </Code>
             <p>For example:</p>
             <Code lang="go">
@@ -312,6 +325,35 @@ fmt.Printf("Clone: %v & %v\\n", cloneTest, clonedTest)`}
 Clone: [3 2 5 3 1 2 4 6] & [3 2 4 3 1 2 4 6]`}</Code>
 
             <hr className="my-12 h-0.5 border-t-0 bg-neutral-200 opacity-100" />
+
+            <h2 id="equals">Equals</h2>
+            <p>
+              We can use this method to determine whether two slices are equal:
+              they must have the same length, and all elements must be equal.
+            </p>
+            <p>If the lengths are different, the method will return false.</p>
+
+            <p>
+              Otherwise, the elements are compared in increasing index order,
+              and the comparison stops at the first unequal pair.
+            </p>
+
+            <Code lang="go">{`isEqual := slices.Equal(mySlice1, mySlice2)`}</Code>
+
+            <p>For example:</p>
+            <Code lang="go">
+              {`equalTest := []int{40,1,5,1,3}
+fmt.Printf("Equal: %t\\n", slices.Equal(equalTest, []int{40,5,1,1,3}))
+fmt.Printf("Equal: %t\\n", slices.Equal(equalTest, []int{4,3}))
+fmt.Printf("Equal: %t\\n", slices.Equal(equalTest, []int{40,1,5,1,3}))`}
+            </Code>
+            <h5>Output:</h5>
+            <Code lang="markdown">{`Equal: false
+Equal: false
+Equal: true`}</Code>
+
+            <hr className="my-12 h-0.5 border-t-0 bg-neutral-200 opacity-100" />
+
             <h2 id="index">Index</h2>
             <p>
               This method returns the index of the first occurrence of the value
@@ -384,7 +426,7 @@ minValue := slices.Min(mySlice)`}</Code>
 
             <p>For example:</p>
             <Code lang="go">
-              {`	maxTest := []int{3, 2, 4, 3, 1, 2,4,6}
+              {`maxTest := []int{3, 2, 4, 3, 1, 2,4,6}
 fmt.Printf("Max: %d\\n", slices.Max(maxTest))
 
 minTest := []int{3, 2, 4, 3, 1, 2,4,6}
@@ -442,7 +484,7 @@ Reverse: [6 4 2 1 3 4 2 3]`}</Code>
               will be added.
             </p>
 
-            <Code lang="go">{`slices.Replace(mySlice, from, to, value1, value2, value3, ...)`}</Code>
+            <Code lang="go">{`newSlice := slices.Replace(mySlice, from, to, value1, value2, ...)`}</Code>
 
             <p>It panics if mySlice[ from : to ] is not a valid slice.</p>
             <p>For example, We will use the slice</p>
@@ -512,26 +554,160 @@ fmt.Printf("Sort: %v\\n", sortTest)`}
             <Code lang="markdown">{`sortTest variable: [3 2 4 3 1 2 4 6]
 Sort: [1 2 2 3 3 4 4 6]`}</Code>
 
+            <hr className="my-12 h-0.5 border-t-0 bg-neutral-200 opacity-100" />
+            <h2 id="function">Function</h2>
+            <p>
+              Some methods have a &apos;Function&apos; functionality, with which
+              we can use custom comparison. Those methods are:
+            </p>
+
+            <table className="border-collapse border border-slate-400">
+              <thead>
+                <tr>
+                  <th className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Method
+                  </th>
+                  <th className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Function Method
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    BinarySearch
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    BinarySearchFunc
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Compact
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    CompactFunc
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Compare
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    CompareFunc
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Contains
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    ContainsFunc
+                  </td>
+                </tr>
+
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Delete
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    DeleteFunc
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Equal
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    EqualFunc
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Index
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    IndexFunc
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    IsSorted
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    IsSortedFunc
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Max
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    MaxFunc
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Min
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    MinFunc
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    Sort
+                  </td>
+                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
+                    SortFunc
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              We are going to do the following example with the Equal method
+              (Function method), comparing an integer slice with a string slice.
+            </p>
+            <p>We defined the values for comparing and the function.</p>
+
+            <Code lang="go">
+              {`numbers := []int{0, 42, 8}
+strings := []string{"000", "42", "0o10"}
+
+equal := slices.EqualFunc(numbers, strings, func(n int, s string) bool {
+	sn, err := strconv.ParseInt(s, 0, 64)
+	if err != nil {
+		return false
+	}
+	return n == int(sn)
+})
+fmt.Printf("EqualFunc: %t\\n", equal)`}
+            </Code>
+
+            <h5>Output:</h5>
+            <Code lang="markdown">{`EqualFunc: true`}</Code>
+
+            <hr className="my-12 h-0.5 border-t-0 bg-neutral-200 opacity-100" />
             <h2>Conclusion</h2>
             <p>
-              In this article, we have explored the fundamentals of binary
-              operators in Golang and learned how to effectively use them in our
-              applications. We have seen how these operators allow us to perform
-              logical and arithmetic operations at the bit level, which is
-              useful in specific scenarios. Remember that understanding and
-              correctly applying binary operators can improve the performance
-              and efficiency of your programs. Feel free to experiment with them
-              and further explore the power of binary operators in your Go
-              projects!
+              In this article, we have presented an array of valuable methods to
+              proficiently manipulate our slices. Remember, for more information
+              you can see the Go official site{" "}
+              <Link
+                href="https://pkg.go.dev/slices@master"
+                className="blog-link"
+              >
+                here
+              </Link>
             </p>
             <p></p>
             <p>
               resource:{" "}
               <Link
-                href="https://github.com/beeblogit/blog_go_binary_operators"
+                href="https://github.com/beeblogit/blog_go_v21_slices"
                 className="blog-link"
               >
-                blog_go_binary_operators
+                blog_go_v21_slices
               </Link>
             </p>
           </div>

@@ -2,12 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/container";
 import "@/styles/buttons.css";
+import Header from "@/components/blog/header";
 
 export default function Post(props) {
   const { loading, author } = props;
   const imageProps = author?.image;
   return (
     <>
+      <Header title={author.name} img={imageProps.src} />
       <Container>
         <article className="mx-auto max-w-screen-md ">
           <div className="mt-3 rounded-2xl bg-gray-50 px-8 py-8 text-gray-500 dark:bg-gray-900 dark:text-gray-400">

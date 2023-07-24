@@ -9,9 +9,7 @@ import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
 import Head from "next/head";
 import Code from "@/components/blog/code";
-import hljs from "highlight.js/lib/core";
-import go from "highlight.js/lib/languages/go";
-hljs.registerLanguage("go", go);
+import Header from "@/components/blog/header";
 
 export default function Post(props) {
   const { loading, post } = props;
@@ -28,34 +26,10 @@ export default function Post(props) {
 
   return (
     <>
-      <head>
-        <title>Binary Operators in Golang</title>
-        <meta
-          prefix="og:https://www.beeblogit.com#"
-          property="og:title"
-          content="Binary Operators in Golang"
-        />
-        <meta
-          prefix="og:https://www.beeblogit.com#"
-          name="twitter:card"
-          content="Binary Operators in Golang"
-        />
-        <meta
-          prefix="og:https://www.beeblogit.com#"
-          property="og:description"
-          content="Binary Operators in Golang"
-        />
-        <meta
-          prefix="og:https://www.beeblogit.com#"
-          property="og:image"
-          content="https://www.beeblogit.com/img/post/1/header_min.jpg"
-        />
-        <meta
-          prefix="og:https://www.beeblogit.com#"
-          property="og:url"
-          content="https://www.beeblogit.com"
-        />
-      </head>
+      <Header
+        title="Binary Operators in Golang"
+        img="/img/post/1/header_min.jpg"
+      />
       <Container className="!pt-0">
         <div className="mx-auto max-w-screen-md ">
           <div className="flex justify-center">
@@ -316,7 +290,7 @@ Number 21504 in binary is 101010000000000`}</Code>
               the value being shifted is bigger than 16 bits.
             </p>
             <p>
-              <b>Right shift</b> is represented by <b>&lt;&lt;</b>, for example:
+              <b>Right shift</b> is represented by <b>&gt;&gt;</b>, for example:
             </p>
             <Code lang="go">
               {`// binary_number >> n_positions_to_shift = result

@@ -1,16 +1,6 @@
 import AuthorPage from "./default";
+import Author from "@/data/author/1.json";
 
 export default async function AuthorDefault({ params }) {
-  const author = {
-    name: "Nahuel Costamagna",
-    image: {
-      src: "/img/authors/nahuel.png",
-      blurDataURL: "",
-      alt: "",
-    },
-    slug: {
-      current: "1",
-    },
-  };
-  return <AuthorPage author={author} />;
+  return <AuthorPage author={Author} />;
 }

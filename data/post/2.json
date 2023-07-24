@@ -1,0 +1,35 @@
+{
+  "title": "Exploring the Power of Go 1.21: slices Package.",
+  "estReadingTime": "10",
+  "categories": [
+    {
+      "title": "Programing",
+      "color": "blue",
+      "slug": {
+        "current": "123"
+      }
+    }
+  ],
+  "excerpt": "12",
+  "mainImage": {
+    "blurDataURL": "",
+    "src": "/img/post/2/header.png",
+    "alt": ""
+  },
+  "author": {
+    "name": "Nahuel Costamagna",
+    "position": "FullStack Developer & DevOps",
+    "image": {
+      "src": "/img/authors/nahuel.png",
+      "blurDataURL": "",
+      "alt": ""
+    },
+    "slug": {
+      "current": "1"
+    }
+  },
+  "slug": {
+    "current": "2"
+  },
+  "publishedAt": "2023-07-23T12:00:00Z"
+}

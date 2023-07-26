@@ -33,7 +33,7 @@ export default function Post(props) {
             <CategoryLabel categories={post.categories} />
           </div>
 
-          <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight lg:text-5xl lg:leading-snug">
+          <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight lg:text-5xl lg:leading-snug dark:text-white">
             {post.title}
           </h1>
 
@@ -53,14 +53,14 @@ export default function Post(props) {
                 )}
               </div>
               <div>
-                <p className="text-gray-800">
+                <p className="text-gray-800 dark:text-gray-400">
                   <Link href={`/author/${post.author.slug.current}`}>
                     {post.author.name}
                   </Link>
                 </p>
                 <div className="flex items-center space-x-2 text-sm">
                   <time
-                    className="text-gray-500"
+                    className="text-gray-500 dark:text-gray-400"
                     dateTime={post?.publishedAt || post._createdAt}
                   >
                     {format(
@@ -91,7 +91,7 @@ export default function Post(props) {
 
       <Container>
         <article className="mx-auto max-w-screen-md ">
-          <div className="prose mx-auto my-3 lg:prose-xl prose-a:text-blue-600">
+          <div className="prose mx-auto my-3 lg:prose-xl prose-a:text-blue-600 dark:prose-invert">
             <h2>Introduction</h2>
             <p>
               Welcome to a tour of Go 1.21&apos;s &apos;slices&apos; upgrades!
@@ -508,8 +508,8 @@ replaceTest = slices.Replace(replaceTest, 3, 6, 10, 11, 12)
 fmt.Printf("Replace: %v\\n", replaceTest)`}</Code>
 
             <h5>Output:</h5>
-            <Code lang="markdown">{`reverseTest variable: [3 2 4 3 1 2 4 6]
-Reverse: [6 4 2 1 3 4 2 3]`}</Code>
+            <Code lang="markdown">{`replaceTest variable: [3 2 4 3 1 2 4 6]
+Replace: [3 2 4 10 11 12 4 6]`}</Code>
 
             <p>We can add the same 3 values only replacing 1 value</p>
 
@@ -714,7 +714,7 @@ fmt.Printf("EqualFunc: %t\\n", equal)`}
           <div className="mb-7 mt-7 flex justify-center">
             <Link
               href="/"
-              className="bg-brand-secondary/20 rounded-full px-5 py-2 text-sm text-blue-600"
+              className="bg-brand-secondary/20 rounded-full px-5 py-2 text-sm text-blue-600 dark:text-blue-500"
             >
               ← View all posts
             </Link>
@@ -732,7 +732,7 @@ const MainImage = ({ image }) => {
       <Image {...image} alt={image.alt || "Thumbnail"} />
       <figcaption className="text-center ">
         {image.caption && (
-          <span className="text-sm italic text-gray-600">{image.caption}</span>
+          <span className="text-sm italic text-gray-600 dark:text-gray-400">{image.caption}</span>
         )}
       </figcaption>
     </div>

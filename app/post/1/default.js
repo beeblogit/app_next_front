@@ -7,9 +7,7 @@ import { parseISO, format } from "date-fns";
 
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
-import Head from "next/head";
 import Code from "@/components/blog/code";
-import Header from "@/components/blog/header";
 
 export default function Post(props) {
   const { loading, post } = props;
@@ -26,10 +24,6 @@ export default function Post(props) {
 
   return (
     <>
-      <Header
-        title="Binary Operators in Golang"
-        img="/img/post/1/header_min.jpg"
-      />
       <Container className="!pt-0">
         <div className="mx-auto max-w-screen-md ">
           <div className="flex justify-center">
@@ -629,18 +623,3 @@ if (0 != (myProfile & READ_ROLE)) {
     </>
   );
 }
-
-const MainImage = ({ image }) => {
-  return (
-    <div className="mb-12 mt-12 ">
-      <Image {...image} alt={image.alt || "Thumbnail"} />
-      <figcaption className="text-center ">
-        {image.caption && (
-          <span className="text-sm italic text-gray-600 dark:text-gray-400">
-            {image.caption}
-          </span>
-        )}
-      </figcaption>
-    </div>
-  );
-};

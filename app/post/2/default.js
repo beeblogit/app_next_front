@@ -3,13 +3,12 @@ import Link from "next/link";
 import Container from "@/components/container";
 import { notFound } from "next/navigation";
 import "@/styles/buttons.css";
-
+import Table from "@/components/blog/table";
 import { parseISO, format } from "date-fns";
 
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
 import Code from "@/components/blog/code";
-import Header from "@/components/blog/header";
 
 export default function Post(props) {
   const { loading, post } = props;
@@ -26,14 +25,13 @@ export default function Post(props) {
 
   return (
     <>
-      <Header title={post.title} img={imageProps.src} />
       <Container className="!pt-0">
         <div className="mx-auto max-w-screen-md ">
           <div className="flex justify-center">
             <CategoryLabel categories={post.categories} />
           </div>
 
-          <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight lg:text-5xl lg:leading-snug dark:text-white">
+          <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-5xl lg:leading-snug">
             {post.title}
           </h1>
 
@@ -91,7 +89,7 @@ export default function Post(props) {
 
       <Container>
         <article className="mx-auto max-w-screen-md ">
-          <div className="prose mx-auto my-3 lg:prose-xl prose-a:text-blue-600 dark:prose-invert">
+          <div className="prose mx-auto my-3 dark:prose-invert lg:prose-xl prose-a:text-blue-600">
             <h2>Introduction</h2>
             <p>
               Welcome to a tour of Go 1.21&apos;s &apos;slices&apos; upgrades!
@@ -115,99 +113,98 @@ export default function Post(props) {
 	"slices"
 )`}
             </Code>
-            <p>
-              We are going to see those methods next:
-              <ul>
-                <li>
-                  <Link href="#binary-search" className="blog-link">
-                    Binary Search
-                  </Link>
-                  : searches some value
-                </li>
-                <li>
-                  <Link href="#compact" className="blog-link">
-                    Compact
-                  </Link>
-                  : replaces consecutive runs of equal elements
-                </li>
-                <li>
-                  <Link href="#compare" className="blog-link">
-                    Compare
-                  </Link>
-                  : compares 2 slices
-                </li>
-                <li>
-                  <Link href="#contains" className="blog-link">
-                    Contains
-                  </Link>
-                  : checks if some value exists
-                </li>
+            <p>We are going to see those methods next:</p>
+            <ul>
+              <li>
+                <Link href="#binary-search" className="blog-link">
+                  Binary Search
+                </Link>
+                : searches some value
+              </li>
+              <li>
+                <Link href="#compact" className="blog-link">
+                  Compact
+                </Link>
+                : replaces consecutive runs of equal elements
+              </li>
+              <li>
+                <Link href="#compare" className="blog-link">
+                  Compare
+                </Link>
+                : compares 2 slices
+              </li>
+              <li>
+                <Link href="#contains" className="blog-link">
+                  Contains
+                </Link>
+                : checks if some value exists
+              </li>
 
-                <li>
-                  <Link href="#clone" className="blog-link">
-                    Clone
-                  </Link>
-                  : clones a slice
-                </li>
+              <li>
+                <Link href="#clone" className="blog-link">
+                  Clone
+                </Link>
+                : clones a slice
+              </li>
 
-                <li>
-                  <Link href="#equals" className="blog-link">
-                    Equals
-                  </Link>
-                  : determines whether two slices are equal.
-                </li>
-                <li>
-                  <Link href="#index" className="blog-link">
-                    Index
-                  </Link>
-                  : returns the index of the value searched
-                </li>
+              <li>
+                <Link href="#equals" className="blog-link">
+                  Equals
+                </Link>
+                : determines whether two slices are equal.
+              </li>
+              <li>
+                <Link href="#index" className="blog-link">
+                  Index
+                </Link>
+                : returns the index of the value searched
+              </li>
 
-                <li>
-                  <Link href="#insert" className="blog-link">
-                    Insert
-                  </Link>
-                  : inserts a range of values
-                </li>
+              <li>
+                <Link href="#insert" className="blog-link">
+                  Insert
+                </Link>
+                : inserts a range of values
+              </li>
 
-                <li>
-                  <Link href="#issorted" className="blog-link">
-                    IsSorted
-                  </Link>
-                  : checks whether our slices is sorted
-                </li>
-                <li>
-                  <Link href="#max-min" className="blog-link">
-                    Max & Min
-                  </Link>
-                  : get the maximum or minimum value
-                </li>
-                <li>
-                  <Link href="#remove" className="blog-link">
-                    Remove
-                  </Link>
-                  : removes a range of values
-                </li>
-                <li>
-                  <Link href="#reverse" className="blog-link">
-                    Reverse
-                  </Link>
-                  : reverses the elements
-                </li>
-                <li>
-                  <Link href="#replace" className="blog-link">
-                    Replace
-                  </Link>
-                  : replaces a range of elements
-                </li>
-                <li>
-                  <Link href="#sort" className="blog-link">
-                    Sort
-                  </Link>
-                  : sorts the elements
-                </li>
-              </ul>
-            </p>
+              <li>
+                <Link href="#issorted" className="blog-link">
+                  IsSorted
+                </Link>
+                : checks whether our slices is sorted
+              </li>
+              <li>
+                <Link href="#max-min" className="blog-link">
+                  Max & Min
+                </Link>
+                : get the maximum or minimum value
+              </li>
+              <li>
+                <Link href="#remove" className="blog-link">
+                  Remove
+                </Link>
+                : removes a range of values
+              </li>
+              <li>
+                <Link href="#reverse" className="blog-link">
+                  Reverse
+                </Link>
+                : reverses the elements
+              </li>
+              <li>
+                <Link href="#replace" className="blog-link">
+                  Replace
+                </Link>
+                : replaces a range of elements
+              </li>
+              <li>
+                <Link href="#sort" className="blog-link">
+                  Sort
+                </Link>
+                : sorts the elements
+              </li>
+            </ul>
+
             <p>
               Some methods have a{" "}
               <Link href="#function" className="blog-link">
@@ -560,110 +557,23 @@ Sort: [1 2 2 3 3 4 4 6]`}</Code>
               Some methods have a &apos;Function&apos; functionality, with which
               we can use custom comparison. Those methods are:
             </p>
+            <Table
+              headers={["Method", "Function Method"]}
+              values={[
+                ["BinarySearch", "BinarySearchFunc"],
+                ["Compact", "CompactFunc"],
+                ["Compare", "CompareFunc"],
+                ["Contains", "ContainsFunc"],
+                ["Delete", "DeleteFunc"],
+                ["Equal", "EqualFunc"],
+                ["Index", "IndexFunc"],
+                ["IsSorted", "IsSortedFunc"],
+                ["Max", "MaxFunc"],
+                ["Min", "MinFunc"],
+                ["Sort", "SortFunc"],
+              ]}
+            />
 
-            <table className="border-collapse border border-slate-400">
-              <thead>
-                <tr>
-                  <th className="border border-slate-300 px-3 py-2 lg:px-5">
-                    Method
-                  </th>
-                  <th className="border border-slate-300 px-3 py-2 lg:px-5">
-                    Function Method
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    BinarySearch
-                  </td>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    BinarySearchFunc
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    Compact
-                  </td>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    CompactFunc
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    Compare
-                  </td>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    CompareFunc
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    Contains
-                  </td>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    ContainsFunc
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    Delete
-                  </td>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    DeleteFunc
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    Equal
-                  </td>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    EqualFunc
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    Index
-                  </td>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    IndexFunc
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    IsSorted
-                  </td>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    IsSortedFunc
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    Max
-                  </td>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    MaxFunc
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    Min
-                  </td>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    MinFunc
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    Sort
-                  </td>
-                  <td className="border border-slate-300 px-3 py-2 lg:px-5">
-                    SortFunc
-                  </td>
-                </tr>
-              </tbody>
-            </table>
             <p>
               We are going to do the following example with the Equal method
               (Function method), comparing an integer slice with a string slice.
@@ -725,16 +635,3 @@ fmt.Printf("EqualFunc: %t\\n", equal)`}
     </>
   );
 }
-
-const MainImage = ({ image }) => {
-  return (
-    <div className="mb-12 mt-12 ">
-      <Image {...image} alt={image.alt || "Thumbnail"} />
-      <figcaption className="text-center ">
-        {image.caption && (
-          <span className="text-sm italic text-gray-600 dark:text-gray-400">{image.caption}</span>
-        )}
-      </figcaption>
-    </div>
-  );
-};

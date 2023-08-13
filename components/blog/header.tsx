@@ -4,7 +4,7 @@ export default function Header({
   img,
 }: {
   title: string;
-  desc: string;
+  desc?: string;
   img: string;
 }) {
   const url = "https://www.beeblogit.com";

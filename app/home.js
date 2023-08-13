@@ -5,7 +5,6 @@ import Header from "@/components/blog/header";
 export default function Post({ posts }) {
   return (
     <>
-      <Header title="Bee Blogit" img="/img/logo.png" />
       {posts && (
         <Container>
           <div className="grid gap-10 md:grid-cols-2 lg:gap-10 ">

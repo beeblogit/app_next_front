@@ -1,6 +1,6 @@
 {
-  "title": "Exploring the Power of Go 1.21: slices Package.",
-  "estReadingTime": "10",
+  "title": "Deep dive into Go 1.21 maps package",
+  "estReadingTime": "4",
   "categories": [
     {
       "title": "Programing",
@@ -13,7 +13,7 @@
   "excerpt": "12",
   "mainImage": {
     "blurDataURL": "",
-    "src": "/img/post/2/header.jpg",
+    "src": "/img/post/3/header.jpg",
     "alt": ""
   },
   "author": {
@@ -29,7 +29,7 @@
     }
   },
   "slug": {
-    "current": "2"
+    "current": "3"
   },
-  "publishedAt": "2023-07-23T12:00:00Z"
+  "publishedAt": "2023-08-14T12:00:00Z"
 }

@@ -1,5 +1,5 @@
 import PostPage from "./default";
-import Post from "@/data/post/1.json";
+import Post from "@/data/post/3.json";
 import Settings from "@/data/settings.json";
 import Header from "@/components/blog/header";
 import Footer from "@/components/footer";
@@ -9,7 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 export default async function PostDefault({ params }) {
   return (
     <>
-      <Header title={Post.title} img="/img/post/1/header_min.jpg" />
+      <Header title={Post.title} img={Post?.mainImage.src} />
       <body className="text-gray-800 antialiased dark:bg-black dark:text-gray-400">
         <>
           <Navbar {...Settings} />

@@ -3,7 +3,6 @@ import Link from "next/link";
 import Container from "@/components/container";
 import { notFound } from "next/navigation";
 import "@/styles/buttons.css";
-import Table from "@/components/blog/table";
 import { parseISO, format } from "date-fns";
 
 import CategoryLabel from "@/components/blog/category";

@@ -7,9 +7,7 @@ import { parseISO, format } from "date-fns";
 
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
-import Head from "next/head";
 import Code from "@/components/blog/code";
-import Header from "@/components/blog/header";
 
 export default function Post(props) {
   const { loading, post } = props;

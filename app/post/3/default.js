@@ -25,16 +25,16 @@ export default function Post(props) {
   return (
     <div>
       <Container className="!pt-0">
-        <div className="mx-auto max-w-screen-md ">
+        <div className="mx-auto">
           <div className="flex justify-center">
             <CategoryLabel categories={post.categories} />
           </div>
 
-          <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-5xl lg:leading-snug">
+          <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white md:text-4xl lg:text-5xl lg:leading-snug">
             {post.title}
           </h1>
 
-          <div className="mt-3 flex justify-center space-x-3 text-gray-500 ">
+          <div className="mt-6 flex flex-col items-center space-x-3 text-gray-500 md:flex-row md:justify-between ">
             <div className="flex items-center gap-3">
               <div className="relative h-10 w-10 flex-shrink-0">
                 {AuthorimageProps && (
@@ -68,6 +68,11 @@ export default function Post(props) {
                   <span>· {post.estReadingTime || "5"} min read</span>
                 </div>
               </div>
+            </div>
+            <div className="mt-3 flex-col items-center gap-20 md:mt-0 md:flex">
+              <audio controls id="tts-audio" controlsList="nodownload">
+                <source src="/audio/3.mp3" type="audio/mpeg" />
+              </audio>
             </div>
           </div>
         </div>

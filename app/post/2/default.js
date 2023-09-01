@@ -88,8 +88,8 @@ export default function Post(props) {
       </div>
 
       <Container>
-        <article className="mx-auto max-w-screen-md ">
-          <div className="prose mx-auto my-3 dark:prose-invert lg:prose-xl prose-a:text-blue-600">
+        <article className="mx-auto max-w-screen-xl">
+          <div className="prose mx-auto my-3 max-w-screen-xl dark:prose-invert lg:prose-xl prose-a:text-blue-600">
             <h2>Introduction</h2>
             <p>
               Welcome to a tour of Go 1.21&apos;s &apos;slices&apos; upgrades!

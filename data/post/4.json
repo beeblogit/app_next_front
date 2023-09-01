@@ -1,6 +1,6 @@
 {
-  "title": "Binary Operators in Golang",
-  "estReadingTime": "15",
+  "title": "Deeper cmp package in Go 1.21",
+  "estReadingTime": "5",
   "categories": [
     {
       "title": "Programing",
@@ -13,7 +13,7 @@
   "excerpt": "12",
   "mainImage": {
     "blurDataURL": "",
-    "src": "/img/post/1/header.png",
+    "src": "/img/post/4/header.jpg",
     "alt": ""
   },
   "author": {
@@ -29,8 +29,8 @@
     }
   },
   "slug": {
-    "current": "1"
+    "current": "4"
   },
-  "audio": "",
-  "publishedAt": "2023-07-14T00:00:00Z"
+  "audio": "4",
+  "publishedAt": "2023-08-14T12:00:00Z"
 }

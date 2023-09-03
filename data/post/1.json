@@ -1,5 +1,6 @@
 {
   "title": "Binary Operators in Golang",
+  "tags": ["Go", "Golang", "Binary Operators", "Operators", "Programing"],
   "estReadingTime": "15",
   "categories": [
     {
@@ -31,5 +32,6 @@
   "slug": {
     "current": "1"
   },
+  "audio": "",
   "publishedAt": "2023-07-14T00:00:00Z"
 }

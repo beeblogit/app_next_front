@@ -3,9 +3,8 @@ import Link from "next/link";
 import Container from "@/components/container";
 import { notFound } from "next/navigation";
 import "@/styles/buttons.css";
-import { parseISO, format } from "date-fns";
 
-import CategoryLabel from "@/components/blog/category";
+import SubHeader from "@/components/blog/subHeader";
 import AuthorCard from "@/components/blog/authorCard";
 import Code from "@/components/blog/code";
 
@@ -20,63 +19,9 @@ export default function Post(props) {
 
   const imageProps = post?.mainImage;
 
-  const AuthorimageProps = post?.author?.image;
-
   return (
     <div>
-      <Container className="!pt-0">
-        <div className="mx-auto">
-          <div className="flex justify-center">
-            <CategoryLabel categories={post.categories} />
-          </div>
-
-          <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white md:text-4xl lg:text-5xl lg:leading-snug">
-            {post.title}
-          </h1>
-
-          <div className="mt-6 flex flex-col items-center space-x-3 text-gray-500 md:flex-row md:justify-between ">
-            <div className="flex items-center gap-3">
-              <div className="relative h-10 w-10 flex-shrink-0">
-                {AuthorimageProps && (
-                  <Link href={`/author/${post.author.slug.current}`}>
-                    <Image
-                      src={AuthorimageProps.src}
-                      alt={post?.author?.name}
-                      className="rounded-full object-cover"
-                      fill
-                      sizes="40px"
-                    />
-                  </Link>
-                )}
-              </div>
-              <div>
-                <p className="text-gray-800 dark:text-gray-400">
-                  <Link href={`/author/${post.author.slug.current}`}>
-                    {post.author.name}
-                  </Link>
-                </p>
-                <div className="flex items-center space-x-2 text-sm">
-                  <time
-                    className="text-gray-500 dark:text-gray-400"
-                    dateTime={post?.publishedAt || post._createdAt}
-                  >
-                    {format(
-                      parseISO(post?.publishedAt || post._createdAt),
-                      "MMMM dd, yyyy"
-                    )}
-                  </time>
-                  <span>· {post.estReadingTime || "5"} min read</span>
-                </div>
-              </div>
-            </div>
-            <div className="mt-3 flex-col items-center gap-20 md:mt-0 md:flex">
-              <audio controls id="tts-audio" controlsList="nodownload">
-                <source src="/audio/3.mp3" type="audio/mpeg" />
-              </audio>
-            </div>
-          </div>
-        </div>
-      </Container>
+      <SubHeader post={post} />
 
       <div className="relative z-0 mx-auto aspect-video max-w-screen-lg overflow-hidden lg:rounded-lg">
         {imageProps && (
@@ -92,8 +37,8 @@ export default function Post(props) {
       </div>
 
       <Container>
-        <article className="mx-auto max-w-screen-md ">
-          <div className="prose mx-auto my-3 dark:prose-invert lg:prose-xl prose-a:text-blue-600">
+        <article className="mx-auto max-w-screen-xl ">
+          <div className="prose mx-auto my-3 max-w-screen-xl dark:prose-invert lg:prose-xl prose-a:text-blue-600">
             <h2>Introduction</h2>
             <p>
               In the realm of Go programming, version 1.21 introduces a fresh

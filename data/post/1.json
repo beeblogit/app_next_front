@@ -1,10 +1,10 @@
 {
   "title": "Binary Operators in Golang",
-  "tags": ["Go", "Golang", "Binary Operators", "Operators", "Programing"],
+  "tags": ["Go", "Golang", "Binary Operators", "Operators", "Programming"],
   "estReadingTime": "15",
   "categories": [
     {
-      "title": "Programing",
+      "title": "Programming",
       "color": "blue",
       "slug": {
         "current": "1"

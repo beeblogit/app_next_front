@@ -1,10 +1,10 @@
 {
   "title": "Deep dive into Go 1.21 maps package",
-  "tags": ["Go", "Golang", "maps", "package", "Programing"],
+  "tags": ["Go", "Golang", "maps", "package", "Programming"],
   "estReadingTime": "4",
   "categories": [
     {
-      "title": "Programing",
+      "title": "Programming",
       "color": "blue",
       "slug": {
         "current": "1"

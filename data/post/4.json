@@ -1,10 +1,10 @@
 {
   "title": "Deeper cmp package in Go 1.21",
   "estReadingTime": "5",
-  "tags": ["Go", "Golang", "cmp", "package", "Programing"],
+  "tags": ["Go", "Golang", "cmp", "package", "Programming"],
   "categories": [
     {
-      "title": "Programing",
+      "title": "Programming",
       "color": "blue",
       "slug": {
         "current": "1"

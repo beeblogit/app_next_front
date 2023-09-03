@@ -1,10 +1,10 @@
 {
   "title": "Exploring the Power of Go 1.21: slices Package.",
   "estReadingTime": "10",
-  "tags": ["Go", "Golang", "slices", "package", "Programing"],
+  "tags": ["Go", "Golang", "slices", "package", "Programming"],
   "categories": [
     {
-      "title": "Programing",
+      "title": "Programming",
       "color": "blue",
       "slug": {
         "current": "1"

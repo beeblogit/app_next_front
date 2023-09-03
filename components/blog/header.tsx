@@ -47,7 +47,10 @@ export default function Header({
         </>
       )}
 
-      {tags && tags.map((tag) => <meta property="article:tag" content={tag} />)}
+      {tags &&
+        tags.map((tag, i) => (
+          <meta property="article:tag" key={i + 1} content={tag} />
+        ))}
 
       <meta property="article:publisher" content={url} />
       <meta name="twitter:card" content="summary_large_image" />

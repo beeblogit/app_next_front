@@ -1,10 +1,11 @@
 export interface IPost {
   title: string;
   estReadingTime: string;
-  categories: [];
+  tags: string[] | null;
+  categories: ICategory[];
   excerpt: string;
-  mainImage: {};
-  autho: {};
+  mainImage: IMainImage;
+  author: IAuthor;
   slug: ISlug;
   audio: string;
   publishedAt: string;

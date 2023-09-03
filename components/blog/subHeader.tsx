@@ -1,4 +1,4 @@
-import { IPost } from "@/model/interface";
+import { IPost, IImage } from "@/model/interfaces";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/container";
@@ -8,7 +8,7 @@ import { parseISO, format } from "date-fns";
 import CategoryLabel from "@/components/blog/category";
 
 export default function SubHeader({ post }: { post: IPost }) {
-  const AuthorimageProps = post?.author?.image;
+  const AuthorimageProps: IImage = post.author.image;
 
   const isAudio = post.audio != "";
 
@@ -47,12 +47,9 @@ export default function SubHeader({ post }: { post: IPost }) {
               <div className="flex items-center space-x-2 text-sm">
                 <time
                   className="text-gray-500 dark:text-gray-400"
-                  dateTime={post?.publishedAt || post._createdAt}
+                  dateTime={post?.publishedAt}
                 >
-                  {format(
-                    parseISO(post?.publishedAt || post._createdAt),
-                    "MMMM dd, yyyy"
-                  )}
+                  {format(parseISO(post?.publishedAt), "MMMM dd, yyyy")}
                 </time>
                 <span>· {post.estReadingTime || "5"} min read</span>
               </div>

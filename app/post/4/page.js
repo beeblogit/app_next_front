@@ -9,7 +9,14 @@ import { Analytics } from "@vercel/analytics/react";
 export default async function PostDefault({ params }) {
   return (
     <>
-      <Header title={Post.title} img={Post?.mainImage.src} />
+      <Header
+        title={Post.title}
+        img={Post?.mainImage.src}
+        tags={Post?.tags}
+        post={`/post/${Post.slug.current}`}
+        published={Post?.publishedAt}
+        author={Post?.author.name}
+      />
       <body className="text-gray-800 antialiased dark:bg-black dark:text-gray-400">
         <>
           <Navbar {...Settings} />

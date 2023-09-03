@@ -14,6 +14,7 @@ export default async function IndexPage() {
   return (
     <>
       <Header title="Bee Blogit" img="/img/logo.png" />
+
       <body className="text-gray-800 antialiased dark:bg-black dark:text-gray-400">
         <>
           <Navbar {...Settings} />

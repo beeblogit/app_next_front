@@ -14,7 +14,7 @@ export default function Navbar(props) {
               {props.logo ? (
                 <Image
                   {...props.logo}
-                  alt="Logo"
+                  alt="Bee Blogit"
                   priority={true}
                   sizes="(max-width: 640px) 100vw, 200px"
                 />

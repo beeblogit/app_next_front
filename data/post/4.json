@@ -15,7 +15,7 @@
   "mainImage": {
     "blurDataURL": "",
     "src": "/img/post/4/header.jpg",
-    "alt": ""
+    "alt": "cmp package in Go 1.21 - Nahuel Costamagna"
   },
   "author": {
     "name": "Nahuel Costamagna",

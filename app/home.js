@@ -1,7 +1,6 @@
-import Link from "next/link";
 import Container from "@/components/container";
 import PostList from "@/components/postlist";
-import Header from "@/components/blog/header";
+
 export default function Post({ posts }) {
   return (
     <>
@@ -17,9 +16,9 @@ export default function Post({ posts }) {
               />
             ))}
           </div>
-          <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3 ">
+          <div className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-3">
             {posts.slice(2, 14).map((post) => (
-              <PostList key={post._id} post={post} aspect="square" />
+              <PostList key={post._id} post={post} aspect="landscape" />
             ))}
           </div>
         </Container>

@@ -15,7 +15,7 @@ export default function Code({
   const code = hljs.highlight(children, { language: lang }).value;
 
   return (
-    <pre>
+    <pre className="dark:bg-stone-800	">
       <code dangerouslySetInnerHTML={{ __html: code }} />
     </pre>
   );

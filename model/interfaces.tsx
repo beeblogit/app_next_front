@@ -1,7 +1,7 @@
 export interface IPost {
   title: string;
   estReadingTime: string;
-  tags: string[] | null;
+  tags: string[];
   categories: ICategory[];
   excerpt: string;
   mainImage: IMainImage;

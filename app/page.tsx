@@ -21,7 +21,7 @@ export default async function IndexPage() {
           <Navbar {...Settings} />
 
           <div>
-            <HomePage posts={posts} />;
+            <HomePage posts={posts} />
           </div>
 
           <Footer {...Settings} />

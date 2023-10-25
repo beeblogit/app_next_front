@@ -8,6 +8,7 @@ import Header from "@/components/blog/header";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { Analytics } from "@vercel/analytics/react";
+import { Providers } from "./providers";
 
 export default async function IndexPage() {
   const posts = [Post4, Post3, Post2, Post1];
@@ -16,7 +17,7 @@ export default async function IndexPage() {
       <Header title="Bee Blogit" img="/img/logo.png" />
 
       <body className="text-gray-800 antialiased dark:bg-black dark:text-gray-400">
-        <>
+        <Providers>
           <Navbar {...Settings} />
 
           <div>
@@ -24,7 +25,7 @@ export default async function IndexPage() {
           </div>
 
           <Footer {...Settings} />
-        </>
+        </Providers>
         <Analytics />
       </body>
     </>

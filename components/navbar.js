@@ -1,30 +1,32 @@
 "use client";
 
-import Container from "@/components/container";
 import Link from "next/link";
 import Image from "next/image";
-
+import ModeButton from "@/components/modeButton";
+import "@/styles/font.css";
 export default function Navbar(props) {
   return (
-    <Container className="border-b border-gray-200">
-      <nav>
-        <div className="dark flex justify-center gap-10">
-          <div className="flex">
-            <Link href="/" className="w-48 dark:hidden">
-              {props.logo ? (
-                <Image
-                  {...props.logo}
-                  alt="Bee Blogit"
-                  priority={true}
-                  sizes="(max-width: 640px) 100vw, 200px"
-                />
-              ) : (
-                <span className="block text-center">Magna Blogit</span>
-              )}
-            </Link>
+    <div className="container mx-auto max-w-screen-lg border-b border-gray-200 px-8 xl:px-5">
+      <nav className="left-0 top-0 z-20 w-full">
+        <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+          <Link href="/" className="flex items-center">
+            {props.logo && (
+              <Image
+                {...props.logo}
+                alt="Bee Blogit"
+                priority={true}
+                sizes="(max-width: 640px) 100vw, 200px"
+              />
+            )}
+            <span className="beeblogit-font ml-2 block text-center text-3xl dark:text-white">
+              BEE BLOGIT
+            </span>
+          </Link>
+          <div className="flex md:order-2">
+            <ModeButton />
           </div>
         </div>
       </nav>
-    </Container>
+    </div>
   );
 }

@@ -6,7 +6,7 @@ import ModeButton from "@/components/modeButton";
 import "@/styles/font.css";
 export default function Navbar(props) {
   return (
-    <div className="container mx-auto max-w-screen-lg border-b border-gray-200 px-2 xl:px-0">
+    <div className="container mx-auto max-w-screen-lg border-b border-gray-200 px-2 dark:border-gray-500 xl:px-0">
       <nav className="left-0 top-0 z-20 w-full">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-2">
           <Link href="/" className="flex items-center">

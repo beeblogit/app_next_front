@@ -2,15 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/container";
 import "@/styles/buttons.css";
-import Header from "@/components/blog/header";
 
 export default function Post(props) {
   const { loading, author } = props;
   const imageProps = author?.image;
-  const desc = `My name is Nahuel Costamagna, and I have been actively involved in the IT industry since 2012. My main skills are FullStack Development, DevOps and Machine Learning. I am passionate about sharing my knowledge with others.`;
+
   return (
     <>
-      <Header title={author.name} img={imageProps.src} desc={desc} />
       <Container>
         <article className="mx-auto max-w-screen-md ">
           <div className="mt-3 rounded-2xl bg-gray-50 px-8 py-8 text-gray-500 dark:bg-gray-900 dark:text-gray-400">

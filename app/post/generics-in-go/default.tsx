@@ -51,7 +51,7 @@ export default function Post(props: Props) {
               powerful feature introduced in Go version 1.18.
             </p>
 
-            <h2>Funtion</h2>
+            <h2>Function</h2>
             <p>
               We can define a function that receives an integer value, for
               instance:

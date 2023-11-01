@@ -3,9 +3,9 @@ import Link from "next/link";
 import Container from "@/components/container";
 import { notFound } from "next/navigation";
 import "@/styles/buttons.css";
-import { parseISO, format } from "date-fns";
 
-import CategoryLabel from "@/components/blog/category";
+import PostFooter from "@/components/blog/postFooter";
+
 import AuthorCard from "@/components/blog/authorCard";
 import Code from "@/components/blog/code";
 import SubHeader from "@/components/blog/subHeader";
@@ -233,16 +233,10 @@ false`}</Code>
               external &apos;constraints&apos; package for performing
               comparisons in Generics.
             </p>
-            <p>
-              resource:{" "}
-              <Link
-                href="https://github.com/beeblogit/blog_go_v21_cmp"
-                className="blog-link"
-                target="_blank"
-              >
-                blog_go_v21_cmp
-              </Link>
-            </p>
+            <PostFooter
+              github="https://github.com/beeblogit/blog_go_v21_cmp"
+              medium="https://costamagna.medium.com/deeper-cmp-package-in-go-1-21-425f25070d37"
+            />
           </div>
           <div className="mb-7 mt-7 flex justify-center">
             <Link

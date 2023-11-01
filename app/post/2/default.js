@@ -6,6 +6,8 @@ import "@/styles/buttons.css";
 import Table from "@/components/blog/table";
 import { parseISO, format } from "date-fns";
 
+import PostFooter from "@/components/blog/postFooter";
+
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
 import Code from "@/components/blog/code";
@@ -610,16 +612,10 @@ fmt.Printf("EqualFunc: %t\\n", equal)`}
                 here
               </Link>
             </p>
-            <p></p>
-            <p>
-              resource:{" "}
-              <Link
-                href="https://github.com/beeblogit/blog_go_v21_slices"
-                className="blog-link"
-              >
-                blog_go_v21_slices
-              </Link>
-            </p>
+            <PostFooter
+              github="https://github.com/beeblogit/blog_go_v21_slices"
+              medium="https://costamagna.medium.com/exploring-the-power-of-go-1-21-slices-package-6e017b2faec9"
+            />
           </div>
           <div className="mb-7 mt-7 flex justify-center">
             <Link

@@ -3,10 +3,9 @@ import Link from "next/link";
 import Container from "@/components/container";
 import { notFound } from "next/navigation";
 import "@/styles/buttons.css";
-import { parseISO, format } from "date-fns";
 import { IPost, IImage } from "@/model/interfaces";
 
-import CategoryLabel from "@/components/blog/category";
+import PostFooter from "@/components/blog/postFooter";
 import AuthorCard from "@/components/blog/authorCard";
 import Code from "@/components/blog/code";
 import SubHeader from "@/components/blog/subHeader";
@@ -380,16 +379,10 @@ sd.Data.PrintTwo()`}</Code>
                 official documentation
               </Link>
             </p>
-            <p>
-              resource:{" "}
-              <Link
-                href="https://github.com/beeblogit/blog_go_generics"
-                className="blog-link"
-                target="_blank"
-              >
-                blog_go_generics
-              </Link>
-            </p>
+            <PostFooter
+              github="https://github.com/beeblogit/blog_go_generics"
+              medium="https://costamagna.medium.com/understanding-the-power-of-generics-in-go-6bea1e3c685d"
+            />
           </div>
           <div className="mb-7 mt-7 flex justify-center">
             <Link

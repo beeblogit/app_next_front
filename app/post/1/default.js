@@ -4,6 +4,7 @@ import Container from "@/components/container";
 import { notFound } from "next/navigation";
 
 import { parseISO, format } from "date-fns";
+import PostFooter from "@/components/blog/postFooter";
 
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
@@ -601,13 +602,11 @@ if (0 != (myProfile & READ_ROLE)) {
               and further explore the power of binary operators in your Go
               projects!
             </p>
-            <p></p>
-            <p>
-              resource:{" "}
-              <a href="https://github.com/beeblogit/blog_go_binary_operators">
-                blog_go_binary_operators
-              </a>
-            </p>
+            <PostFooter
+              github="https://github.com/beeblogit/blog_go_binary_operators"
+              medium="https://costamagna.medium.com/binary-operators-in-golang-f0c546ef87eb"
+              youtube="https://www.youtube.com/watch?v=MYtqutTwo3M&ab_channel=NahuelCostamagna"
+            />
           </div>
           <div className="mb-7 mt-7 flex justify-center">
             <Link

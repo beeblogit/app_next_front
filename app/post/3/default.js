@@ -4,6 +4,8 @@ import Container from "@/components/container";
 import { notFound } from "next/navigation";
 import "@/styles/buttons.css";
 
+import PostFooter from "@/components/blog/postFooter";
+
 import SubHeader from "@/components/blog/subHeader";
 import AuthorCard from "@/components/blog/authorCard";
 import Code from "@/components/blog/code";
@@ -238,15 +240,11 @@ copied variable (dst): map[four:44 nine:9 one:1 ten:10 three:3 two:2]`}</Code>
               </Link>
             </p>
 
-            <p>
-              resource:{" "}
-              <Link
-                href="https://github.com/beeblogit/blog_go_v21_maps"
-                className="blog-link"
-              >
-                blog_go_v21_maps
-              </Link>
-            </p>
+            <PostFooter
+              github="https://github.com/beeblogit/blog_go_v21_maps"
+              medium="https://costamagna.medium.com/deep-dive-into-go-1-21-maps-package-c84511e26b79"
+              youtube="https://www.youtube.com/watch?v=1cz2-BbRb34&ab_channel=NahuelCostamagna"
+            />
           </div>
           <div className="mb-7 mt-7 flex justify-center">
             <Link

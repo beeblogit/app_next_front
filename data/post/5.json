@@ -1,0 +1,37 @@
+{
+  "title": "Understanding the Power of Generics in Go",
+  "estReadingTime": "7",
+  "tags": ["Go", "Golang", "Generics", "1.18", "Programming"],
+  "categories": [
+    {
+      "title": "Programming",
+      "color": "blue",
+      "slug": {
+        "current": "1"
+      }
+    }
+  ],
+  "excerpt": "12",
+  "mainImage": {
+    "blurDataURL": "",
+    "src": "/img/post/5/header.jpg",
+    "alt": "Generics in Go 1.18 - Nahuel Costamagna"
+  },
+  "author": {
+    "name": "Nahuel Costamagna",
+    "position": "FullStack Developer & DevOps",
+    "image": {
+      "src": "/img/authors/nahuel.png",
+      "blurDataURL": "",
+      "alt": ""
+    },
+    "slug": {
+      "current": "1"
+    }
+  },
+  "slug": {
+    "current": "generics-in-go"
+  },
+  "audio": "",
+  "publishedAt": "2023-11-01T12:00:00Z"
+}

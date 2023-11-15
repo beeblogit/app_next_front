@@ -284,7 +284,10 @@ use .
                 official documentation
               </Link>
             </p>
-            <PostFooter github="https://github.com/beeblogit/blog_go_work_project" />
+            <PostFooter
+              github="https://github.com/beeblogit/blog_go_work_project"
+              medium="https://costamagna.medium.com/go-work-command-the-functionality-you-must-know-4380b64a2569"
+            />
           </div>
           <div className="mb-7 mt-7 flex justify-center">
             <Link

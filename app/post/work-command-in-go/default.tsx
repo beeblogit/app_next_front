@@ -275,7 +275,7 @@ use .
               With this functionality, we can use our imported package locally
               without the need to upload it to the repository or use{" "}
               <b>replace</b> in our go.mod file. For more information, you can
-              refer to the
+              refer to the{" "}
               <Link
                 href="https://go.dev/doc/tutorial/workspaces"
                 className="blog-link"

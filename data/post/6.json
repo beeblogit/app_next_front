@@ -1,0 +1,45 @@
+{
+  "title": "Go Work command: The functionality you must know",
+  "estReadingTime": "7",
+  "tags": [
+    "go",
+    "golang",
+    "work",
+    "command",
+    "workspace",
+    "workspaces",
+    "multi-module"
+  ],
+  "categories": [
+    {
+      "title": "Programming",
+      "color": "blue",
+      "slug": {
+        "current": "1"
+      }
+    }
+  ],
+  "excerpt": "12",
+  "mainImage": {
+    "blurDataURL": "",
+    "src": "/img/post/6/header.jpg",
+    "alt": "Go Work command - Nahuel Costamagna"
+  },
+  "author": {
+    "name": "Nahuel Costamagna",
+    "position": "FullStack Developer & DevOps",
+    "image": {
+      "src": "/img/authors/nahuel.png",
+      "blurDataURL": "",
+      "alt": ""
+    },
+    "slug": {
+      "current": "1"
+    }
+  },
+  "slug": {
+    "current": "work-command-in-go"
+  },
+  "audio": "",
+  "publishedAt": "2023-11-01T12:00:00Z"
+}

@@ -4,6 +4,7 @@ import Post2 from "@/data/post/2.json";
 import Post3 from "@/data/post/3.json";
 import Post4 from "@/data/post/4.json";
 import Post5 from "@/data/post/5.json";
+import Post6 from "@/data/post/6.json";
 import Settings from "@/data/settings.json";
 import Header from "@/components/blog/header";
 import Footer from "@/components/footer";
@@ -12,7 +13,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Providers } from "./providers";
 
 export default async function IndexPage() {
-  const posts = [Post5, Post4, Post3, Post2, Post1];
+  const posts = [Post6, Post5, Post4, Post3, Post2, Post1];
   return (
     <>
       <Header title="Bee Blogit" img="/img/logo.png" />

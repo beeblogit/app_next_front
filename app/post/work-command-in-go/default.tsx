@@ -47,8 +47,8 @@ export default function Post(props: Props) {
           <div className="prose mx-auto my-3 max-w-screen-xl dark:prose-invert lg:prose-xl prose-a:text-blue-600">
             <h2>Introduction</h2>
             <p>
-              Welcome to this post, where we'll discuss the Work command in Go,
-              which was released in Go version 1.18.
+              Welcome to this post, where we&apos;ll discuss the Work command in
+              Go, which was released in Go version 1.18.
             </p>
             <p>
               In my case, my Go version is 1.21; however, you can use whatever
@@ -59,7 +59,7 @@ export default function Post(props: Props) {
               project, with this functionality, we can use our local package,
               test it in our project without the necessity of uploading it to a
               repository, and import it. And without the necessity of using{" "}
-              <b>'replace'</b> in our go.mod file either.
+              <b>&apos;replace&apos;</b> in our go.mod file either.
             </p>
             <h2>Go Work</h2>
             <p>
@@ -134,8 +134,8 @@ blog_go_work_pkg/
             <h3>Project</h3>
             <p>
               We are going to create our project (in my case, I called it
-              'blog_go_work_project'). The first thing that we are going to do
-              is initialize our go.mod file
+              &apos;blog_go_work_project&apos;). The first thing that we are
+              going to do is initialize our go.mod file
             </p>
             <Code lang="markdown">{`go mod init`}</Code>
             <p>and import our external package</p>
@@ -145,8 +145,8 @@ blog_go_work_pkg/
               <b>User</b> struct
             </p>
             <p>
-              We instantiate a user variable and perform 'Marshal' to display
-              the user entity in JSON.
+              We instantiate a user variable and perform &apos;Marshal&apos; to
+              display the user entity in JSON.
             </p>
             <Code lang="go">{`package main
 
@@ -170,7 +170,8 @@ func main() {
             <p>
               But how can we perform changes in our package and import it
               without the need to upload the changes to the repository? In this
-              way, we can use the 'work' functionality to perform this action.
+              way, we can use the &apos;work&apos; functionality to perform this
+              action.
             </p>
             <h3>Work functionality</h3>
             <p>
@@ -190,8 +191,8 @@ src/
 `}</Code>
             <p>
               We are going to make some changes to our package, adding the
-              'LastName' and 'Country' fields (without uploading it to the
-              repository).
+              &apos;LastName&apos; and &apos;Country&apos; fields (without
+              uploading it to the repository).
             </p>
             <Code lang="go">{`type User struct {
     ID        string \`json:"id"\`
@@ -226,7 +227,7 @@ use (
 `}</Code>
             <p>
               In our project, we are going to define the values for the
-              'LastName' and 'Country' fields.
+              &apos;LastName&apos; and &apos;Country&apos; fields.
             </p>
             <Code lang="go">{`func main() {
     u := domain.User{
@@ -242,8 +243,8 @@ use (
             <p>we execute the program and see the result</p>
             <Code lang="json">{`{"id":"1231","first_name":"Nahuel","last_name":"Costamagna","country":"Argentina"}`}</Code>
             <p>
-              In this way, we obtain our <b>'blog_go_work_pkg'</b> local package
-              instead of the remote package on GitHub.
+              In this way, we obtain our <b>&apos;blog_go_work_pkg&apos;</b>{" "}
+              local package instead of the remote package on GitHub.
             </p>
             <p>
               We can remove the external package from our project using the
@@ -251,15 +252,15 @@ use (
             </p>
             <Code lang="markdown">{`go work edit -dropuse ../blog_go_work_pkg`}</Code>
             <p>
-              and we see the content of our <b>'go.work'</b> file.
+              and we see the content of our <b>&apos;go.work&apos;</b> file.
             </p>
             <Code lang="markdown">{`go 1.21.0
 
 use .
 `}</Code>
             <p>
-              Of course, we can remove it directly from our 'go.work' file
-              without the need to execute a command.
+              Of course, we can remove it directly from our &apos;go.work&apos;
+              file without the need to execute a command.
             </p>
             <p>
               We run the program again and can see the error because we are

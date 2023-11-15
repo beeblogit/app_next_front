@@ -1,9 +1,11 @@
 import hljs from "highlight.js/lib/core";
 import go from "highlight.js/lib/languages/go";
 import markdown from "highlight.js/lib/languages/markdown";
+import json from "highlight.js/lib/languages/json";
 
 hljs.registerLanguage("go", go);
 hljs.registerLanguage("markdown", markdown);
+hljs.registerLanguage("json", json);
 
 export default function Code({
   children,
